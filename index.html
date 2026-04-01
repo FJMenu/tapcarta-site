@@ -24,7 +24,6 @@
       --shadow:0 18px 50px rgba(0,0,0,.38);
       --radius:22px;
       --max:1180px;
-      --success:#cfe8a9;
     }
 
     *{
@@ -185,6 +184,7 @@
 
     .hero{
       padding:72px 0 34px;
+      scroll-margin-top:90px;
     }
 
     .hero-grid{
@@ -355,7 +355,7 @@
 
     .screen-actions{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:10px;
       padding:16px 18px;
     }
@@ -366,7 +366,7 @@
       border-radius:16px;
       padding:13px 9px;
       text-align:center;
-      font-size:13px;
+      font-size:12px;
       color:#ececec;
       font-weight:700;
     }
@@ -406,6 +406,7 @@
 
     .section{
       padding:30px 0;
+      scroll-margin-top:95px;
     }
 
     .section-head{
@@ -601,6 +602,12 @@
       line-height:1.6;
     }
 
+    .asterisk{
+      color:var(--gold);
+      font-weight:900;
+      margin-left:2px;
+    }
+
     .limits{
       margin-top:20px;
       padding:18px 20px;
@@ -691,22 +698,25 @@
       gap:12px;
       color:var(--muted);
       font-size:15px;
+      flex-wrap:wrap;
     }
 
-    .fj-badge{
-      width:36px;
-      height:36px;
-      border-radius:11px;
-      background:linear-gradient(180deg,#1a1a1a,#111);
-      border:1px solid rgba(255,255,255,.10);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-weight:900;
-      box-shadow:0 10px 18px rgba(0,0,0,.28);
+    .fj-logo-wrap{
+      width:52px;
+      height:52px;
+      border-radius:14px;
       overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 10px 18px rgba(0,0,0,.28);
       flex-shrink:0;
+      background:#111;
+    }
+
+    .fj-logo{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
 
     .footer-links{
@@ -788,7 +798,11 @@
       }
 
       .screen-actions{
-        grid-template-columns:1fr 1fr 1fr;
+        grid-template-columns:1fr 1fr;
+      }
+
+      .powered{
+        align-items:flex-start;
       }
     }
   </style>
@@ -849,12 +863,11 @@
           <h1 data-i18n="hero_title">Le menu QR intelligent pour restaurants</h1>
 
           <p class="lead" data-i18n="hero_text">
-            TapCarta transforme votre carte en expérience mobile rapide, élégante et multilingue.
-            Vos clients scannent, consultent, appellent, trouvent l’itinéraire et interagissent immédiatement.
+            TapCarta transforme votre carte en expérience mobile rapide, élégante et multilingue. Vos clients scannent, consultent, appellent, trouvent l’itinéraire, laissent un avis Google et peuvent commander ou réserver directement via le WhatsApp du restaurateur.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="/demo" data-i18n="hero_cta_demo">Voir la démo</a>
+            <a class="btn btn-primary" href="./demo/" data-i18n="hero_cta_demo">Voir la démo</a>
             <a class="btn btn-secondary" href="#pricing" data-i18n="hero_cta_pricing">Découvrir les offres</a>
             <a class="btn btn-secondary" href="#contact" data-i18n="hero_cta_contact">Je suis restaurateur</a>
           </div>
@@ -864,6 +877,7 @@
             <div class="hero-point" data-i18n="hero_point_2">Multilingue automatique</div>
             <div class="hero-point" data-i18n="hero_point_3">Chargement rapide</div>
             <div class="hero-point" data-i18n="hero_point_4">Appel + GPS + WhatsApp</div>
+            <div class="hero-point" data-i18n="hero_point_5">Avis Google direct</div>
           </div>
         </div>
 
@@ -880,6 +894,7 @@
                 <div class="screen-action" data-i18n="mockup_call">Appeler</div>
                 <div class="screen-action" data-i18n="mockup_route">Itinéraire</div>
                 <div class="screen-action" data-i18n="mockup_whatsapp">WhatsApp</div>
+                <div class="screen-action" data-i18n="mockup_review">Avis Google</div>
               </div>
 
               <div class="screen-section">
@@ -965,7 +980,7 @@
             <div class="feature-icon">3</div>
             <h3 data-i18n="feature_3_title">Le client agit</h3>
             <p data-i18n="feature_3_text">
-              Appel direct, WhatsApp, avis Google ou GPS : chaque action utile est accessible en un geste.
+              Appel direct, WhatsApp, avis Google, commande, réservation ou GPS : chaque action utile est accessible en un geste.
             </p>
           </div>
         </div>
@@ -982,7 +997,7 @@
             </p>
           </div>
 
-          <a class="btn btn-primary" href="/demo" data-i18n="demo_btn">Ouvrir la démo</a>
+          <a class="btn btn-primary" href="./demo/" data-i18n="demo_btn">Ouvrir la démo</a>
         </div>
       </div>
     </section>
@@ -1037,10 +1052,11 @@
             <ul class="features">
               <li data-i18n="plan_standard_li_1">Menu digital complet</li>
               <li data-i18n="plan_standard_li_2">Détection automatique de la langue</li>
-              <li data-i18n="plan_standard_li_3">4 langues incluses*</li>
-              <li data-i18n="plan_standard_li_4">1 modification du menu par mois</li>
-              <li data-i18n="plan_standard_li_5">Boutons appel, GPS, avis Google, WhatsApp</li>
-              <li data-i18n="plan_standard_li_6">Lien standard : tapcarta.com/nomduresto</li>
+              <li data-i18n="plan_standard_li_3">Photos des plats<span class="asterisk">*</span></li>
+              <li data-i18n="plan_standard_li_4">4 langues incluses<span class="asterisk">*</span></li>
+              <li data-i18n="plan_standard_li_5">1 modification du menu par mois</li>
+              <li data-i18n="plan_standard_li_6">Boutons appel, GPS, avis Google, WhatsApp</li>
+              <li data-i18n="plan_standard_li_7">Lien standard : tapcarta.com/nomduresto</li>
             </ul>
 
             <a class="btn btn-primary" href="#contact" data-i18n="plan_standard_btn">Recevoir une proposition</a>
@@ -1060,9 +1076,10 @@
 
             <ul class="features">
               <li data-i18n="plan_premium_li_1">Tout le Standard</li>
-              <li data-i18n="plan_premium_li_2">Réservations</li>
-              <li data-i18n="plan_premium_li_3">Commandes à emporter</li>
+              <li data-i18n="plan_premium_li_2">Réservations via WhatsApp</li>
+              <li data-i18n="plan_premium_li_3">Commandes via WhatsApp</li>
               <li data-i18n="plan_premium_li_4">Support prioritaire</li>
+              <li data-i18n="plan_premium_li_5">Adresse premium : nomduresto.tapcarta.com</li>
             </ul>
 
             <div class="plan-note" data-i18n="plan_premium_note">
@@ -1092,7 +1109,7 @@
             </p>
 
             <div class="contact-actions">
-              <a class="btn btn-primary" href="/demo" data-i18n="contact_btn_demo">Voir la démo</a>
+              <a class="btn btn-primary" href="./demo/" data-i18n="contact_btn_demo">Voir la démo</a>
               <a class="btn btn-secondary" href="mailto:contact@tapcarta.com" data-i18n="contact_btn_mail">Demander une proposition</a>
               <a class="btn btn-secondary" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="contact_btn_whatsapp">WhatsApp</a>
             </div>
@@ -1116,7 +1133,7 @@
             <div class="contact-item">
               <div class="contact-item-label" data-i18n="contact_box_3_label">Adresse personnalisée</div>
               <div class="contact-item-value" data-i18n="contact_box_3_text">
-                Option possible avec une adresse premium du type nomdurestaurant.tapcarta.com.
+                Option possible avec une adresse premium du type nomduresto.tapcarta.com.
               </div>
             </div>
           </div>
@@ -1129,7 +1146,9 @@
     <div class="container footer-inner">
       <div class="powered">
         <span data-i18n="footer_powered">Powered by</span>
-        <span class="fj-badge" aria-label="FJ">FJ</span>
+        <span class="fj-logo-wrap" aria-label="FJ">
+          <img src="ChatGPT Image 14 févr. 2026, 15_23_38.png" alt="Logo FJ" class="fj-logo">
+        </span>
       </div>
 
       <div class="footer-links">
@@ -1151,7 +1170,7 @@
         nav_contact: "Contact",
         hero_badge: "Solution digitale pensée pour le mobile",
         hero_title: "Le menu QR intelligent pour restaurants",
-        hero_text: "TapCarta transforme votre carte en expérience mobile rapide, élégante et multilingue. Vos clients scannent, consultent, appellent, trouvent l’itinéraire et interagissent immédiatement.",
+        hero_text: "TapCarta transforme votre carte en expérience mobile rapide, élégante et multilingue. Vos clients scannent, consultent, appellent, trouvent l’itinéraire, laissent un avis Google et peuvent commander ou réserver directement via le WhatsApp du restaurateur.",
         hero_cta_demo: "Voir la démo",
         hero_cta_pricing: "Découvrir les offres",
         hero_cta_contact: "Je suis restaurateur",
@@ -1159,12 +1178,14 @@
         hero_point_2: "Multilingue automatique",
         hero_point_3: "Chargement rapide",
         hero_point_4: "Appel + GPS + WhatsApp",
+        hero_point_5: "Avis Google direct",
         mockup_badge: "Exemple TapCarta",
         mockup_title: "La Bonne Fourchette",
         mockup_sub: "Menu digital multilingue",
         mockup_call: "Appeler",
         mockup_route: "Itinéraire",
         mockup_whatsapp: "WhatsApp",
+        mockup_review: "Avis Google",
         mockup_cat_1: "Entrées",
         mockup_desc_1: "Recette belge croustillante",
         mockup_desc_2: "Parmesan, roquette, huile d’olive",
@@ -1180,7 +1201,7 @@
         feature_2_title: "Le menu s’adapte",
         feature_2_text: "La langue s’adapte automatiquement et la lecture reste claire pour une consultation rapide à table.",
         feature_3_title: "Le client agit",
-        feature_3_text: "Appel direct, WhatsApp, avis Google ou GPS : chaque action utile est accessible en un geste.",
+        feature_3_text: "Appel direct, WhatsApp, avis Google, commande, réservation ou GPS : chaque action utile est accessible en un geste.",
         demo_title: "Voir la démonstration complète",
         demo_text: "Ouvrez un exemple complet de menu TapCarta et découvrez l’expérience telle qu’un client la vit sur son téléphone.",
         demo_btn: "Ouvrir la démo",
@@ -1201,19 +1222,21 @@
         plan_standard_period: "/ mois",
         plan_standard_li_1: "Menu digital complet",
         plan_standard_li_2: "Détection automatique de la langue",
-        plan_standard_li_3: "4 langues incluses*",
-        plan_standard_li_4: "1 modification du menu par mois",
-        plan_standard_li_5: "Boutons appel, GPS, avis Google, WhatsApp",
-        plan_standard_li_6: "Lien standard : tapcarta.com/nomduresto",
+        plan_standard_li_3: "Photos des plats*",
+        plan_standard_li_4: "4 langues incluses*",
+        plan_standard_li_5: "1 modification du menu par mois",
+        plan_standard_li_6: "Boutons appel, GPS, avis Google, WhatsApp",
+        plan_standard_li_7: "Lien standard : tapcarta.com/nomduresto",
         plan_standard_btn: "Recevoir une proposition",
         plan_premium_badge: "Version avancée",
         plan_premium_title: "Version Premium",
         plan_premium_desc: "Pour aller plus loin avec des fonctions supplémentaires et une expérience plus riche.",
         plan_premium_period: "/ mois",
         plan_premium_li_1: "Tout le Standard",
-        plan_premium_li_2: "Réservations",
-        plan_premium_li_3: "Commandes à emporter",
+        plan_premium_li_2: "Réservations via WhatsApp",
+        plan_premium_li_3: "Commandes via WhatsApp",
         plan_premium_li_4: "Support prioritaire",
+        plan_premium_li_5: "Adresse premium : nomduresto.tapcarta.com",
         plan_premium_note: "Peut être enrichi par des options selon le besoin du restaurant.",
         plan_premium_btn: "Parler du projet",
         limits_label: "* Limites prévues pour garantir la fluidité :",
@@ -1228,7 +1251,7 @@
         contact_box_2_label: "Version premium",
         contact_box_2_text: "Réservations, commandes à emporter et possibilités plus avancées selon le projet.",
         contact_box_3_label: "Adresse personnalisée",
-        contact_box_3_text: "Option possible avec une adresse premium du type nomdurestaurant.tapcarta.com.",
+        contact_box_3_text: "Option possible avec une adresse premium du type nomduresto.tapcarta.com.",
         footer_powered: "Powered by",
         footer_link_1: "Fonctionnement",
         footer_link_2: "Démo",
@@ -1243,7 +1266,7 @@
         nav_contact: "Contacto",
         hero_badge: "Solución digital pensada para móvil",
         hero_title: "El menú QR inteligente para restaurantes",
-        hero_text: "TapCarta convierte tu carta en una experiencia móvil rápida, elegante y multilingüe. Tus clientes escanean, consultan, llaman, encuentran la ruta e interactúan al instante.",
+        hero_text: "TapCarta convierte tu carta en una experiencia móvil rápida, elegante y multilingüe. Tus clientes escanean, consultan, llaman, encuentran la ruta, dejan una reseña en Google y pueden pedir o reservar directamente por el WhatsApp del restaurante.",
         hero_cta_demo: "Ver la demo",
         hero_cta_pricing: "Descubrir planes",
         hero_cta_contact: "Soy restaurador",
@@ -1251,12 +1274,14 @@
         hero_point_2: "Multilingüe automático",
         hero_point_3: "Carga rápida",
         hero_point_4: "Llamada + GPS + WhatsApp",
+        hero_point_5: "Reseña Google directa",
         mockup_badge: "Ejemplo TapCarta",
         mockup_title: "La Bonne Fourchette",
         mockup_sub: "Menú digital multilingüe",
         mockup_call: "Llamar",
         mockup_route: "Ruta",
         mockup_whatsapp: "WhatsApp",
+        mockup_review: "Reseña Google",
         mockup_cat_1: "Entrantes",
         mockup_desc_1: "Receta belga crujiente",
         mockup_desc_2: "Parmesano, rúcula, aceite de oliva",
@@ -1272,7 +1297,7 @@
         feature_2_title: "El menú se adapta",
         feature_2_text: "El idioma se adapta automáticamente y la lectura sigue siendo clara para una consulta rápida en mesa.",
         feature_3_title: "El cliente actúa",
-        feature_3_text: "Llamada directa, WhatsApp, reseñas Google o GPS: cada acción útil está disponible en un gesto.",
+        feature_3_text: "Llamada directa, WhatsApp, reseñas Google, pedido, reserva o GPS: cada acción útil está disponible en un gesto.",
         demo_title: "Ver la demostración completa",
         demo_text: "Abre un ejemplo completo de menú TapCarta y descubre la experiencia tal como la vive un cliente en su teléfono.",
         demo_btn: "Abrir demo",
@@ -1293,19 +1318,21 @@
         plan_standard_period: "/ mes",
         plan_standard_li_1: "Menú digital completo",
         plan_standard_li_2: "Detección automática del idioma",
-        plan_standard_li_3: "4 idiomas incluidos*",
-        plan_standard_li_4: "1 modificación del menú al mes",
-        plan_standard_li_5: "Botones llamada, GPS, reseñas Google, WhatsApp",
-        plan_standard_li_6: "Enlace estándar: tapcarta.com/nombrerestaurante",
+        plan_standard_li_3: "Fotos de los platos*",
+        plan_standard_li_4: "4 idiomas incluidos*",
+        plan_standard_li_5: "1 modificación del menú al mes",
+        plan_standard_li_6: "Botones llamada, GPS, reseñas Google, WhatsApp",
+        plan_standard_li_7: "Enlace estándar: tapcarta.com/nomduresto",
         plan_standard_btn: "Recibir propuesta",
         plan_premium_badge: "Versión avanzada",
         plan_premium_title: "Versión Premium",
         plan_premium_desc: "Para ir más lejos con funciones adicionales y una experiencia más rica.",
         plan_premium_period: "/ mes",
         plan_premium_li_1: "Todo el Standard",
-        plan_premium_li_2: "Reservas",
-        plan_premium_li_3: "Pedidos para llevar",
+        plan_premium_li_2: "Reservas por WhatsApp",
+        plan_premium_li_3: "Pedidos por WhatsApp",
         plan_premium_li_4: "Soporte prioritario",
+        plan_premium_li_5: "Dirección premium: nomduresto.tapcarta.com",
         plan_premium_note: "Puede ampliarse con opciones según la necesidad del restaurante.",
         plan_premium_btn: "Hablar del proyecto",
         limits_label: "* Límites previstos para garantizar fluidez:",
@@ -1320,7 +1347,7 @@
         contact_box_2_label: "Versión premium",
         contact_box_2_text: "Reservas, pedidos para llevar y posibilidades más avanzadas según el proyecto.",
         contact_box_3_label: "Dirección personalizada",
-        contact_box_3_text: "Opción posible con una dirección premium del tipo nombredelrestaurante.tapcarta.com.",
+        contact_box_3_text: "Opción posible con una dirección premium del tipo nomduresto.tapcarta.com.",
         footer_powered: "Powered by",
         footer_link_1: "Funcionamiento",
         footer_link_2: "Demo",
@@ -1335,7 +1362,7 @@
         nav_contact: "Contact",
         hero_badge: "A mobile-first digital solution",
         hero_title: "The smart QR menu for restaurants",
-        hero_text: "TapCarta turns your menu into a fast, elegant and multilingual mobile experience. Customers scan, browse, call, get directions and interact instantly.",
+        hero_text: "TapCarta turns your menu into a fast, elegant and multilingual mobile experience. Customers scan, browse, call, get directions, leave a Google review and can order or book directly through the restaurant’s WhatsApp.",
         hero_cta_demo: "View demo",
         hero_cta_pricing: "Discover plans",
         hero_cta_contact: "I am a restaurant owner",
@@ -1343,12 +1370,14 @@
         hero_point_2: "Automatic multilingual mode",
         hero_point_3: "Fast loading",
         hero_point_4: "Call + GPS + WhatsApp",
+        hero_point_5: "Direct Google review",
         mockup_badge: "TapCarta example",
         mockup_title: "La Bonne Fourchette",
         mockup_sub: "Multilingual digital menu",
         mockup_call: "Call",
         mockup_route: "Directions",
         mockup_whatsapp: "WhatsApp",
+        mockup_review: "Google review",
         mockup_cat_1: "Starters",
         mockup_desc_1: "Crispy Belgian recipe",
         mockup_desc_2: "Parmesan, arugula, olive oil",
@@ -1364,7 +1393,7 @@
         feature_2_title: "The menu adapts",
         feature_2_text: "Language adapts automatically and reading stays clear for quick browsing at the table.",
         feature_3_title: "The customer acts",
-        feature_3_text: "Direct call, WhatsApp, Google reviews or GPS: every useful action is one tap away.",
+        feature_3_text: "Direct call, WhatsApp, Google reviews, ordering, booking or GPS: every useful action is one tap away.",
         demo_title: "See the full demonstration",
         demo_text: "Open a full TapCarta menu example and discover the experience exactly as a customer sees it on a phone.",
         demo_btn: "Open demo",
@@ -1385,19 +1414,21 @@
         plan_standard_period: "/ month",
         plan_standard_li_1: "Full digital menu",
         plan_standard_li_2: "Automatic language detection",
-        plan_standard_li_3: "4 languages included*",
-        plan_standard_li_4: "1 menu update per month",
-        plan_standard_li_5: "Call, GPS, Google reviews, WhatsApp buttons",
-        plan_standard_li_6: "Standard link: tapcarta.com/restaurantname",
+        plan_standard_li_3: "Dish photos*",
+        plan_standard_li_4: "4 languages included*",
+        plan_standard_li_5: "1 menu update per month",
+        plan_standard_li_6: "Call, GPS, Google reviews, WhatsApp buttons",
+        plan_standard_li_7: "Standard link: tapcarta.com/nomduresto",
         plan_standard_btn: "Get a proposal",
         plan_premium_badge: "Advanced version",
         plan_premium_title: "Premium version",
         plan_premium_desc: "To go further with extra features and a richer experience.",
         plan_premium_period: "/ month",
         plan_premium_li_1: "Everything in Standard",
-        plan_premium_li_2: "Reservations",
-        plan_premium_li_3: "Takeaway orders",
+        plan_premium_li_2: "Bookings via WhatsApp",
+        plan_premium_li_3: "Orders via WhatsApp",
         plan_premium_li_4: "Priority support",
+        plan_premium_li_5: "Premium address: nomduresto.tapcarta.com",
         plan_premium_note: "Can be expanded with options depending on the restaurant’s needs.",
         plan_premium_btn: "Discuss the project",
         limits_label: "* Limits designed to keep the experience smooth:",
@@ -1410,9 +1441,9 @@
         contact_box_1_label: "Standard version",
         contact_box_1_text: "A real digital menu, multilingual and ready to be used through a QR code.",
         contact_box_2_label: "Premium version",
-        contact_box_2_text: "Reservations, takeaway orders and more advanced possibilities depending on the project.",
+        contact_box_2_text: "Bookings, takeaway orders and more advanced possibilities depending on the project.",
         contact_box_3_label: "Custom address",
-        contact_box_3_text: "Possible option with a premium address such as restaurantname.tapcarta.com.",
+        contact_box_3_text: "Possible option with a premium address such as nomduresto.tapcarta.com.",
         footer_powered: "Powered by",
         footer_link_1: "How it works",
         footer_link_2: "Demo",
@@ -1427,7 +1458,7 @@
         nav_contact: "Contact",
         hero_badge: "Digitale oplossing voor mobiel gebruik",
         hero_title: "Het slimme QR-menu voor restaurants",
-        hero_text: "TapCarta maakt van uw kaart een snelle, elegante en meertalige mobiele ervaring. Klanten scannen, bekijken, bellen, vinden de route en reageren meteen.",
+        hero_text: "TapCarta maakt van uw kaart een snelle, elegante en meertalige mobiele ervaring. Klanten scannen, bekijken, bellen, vinden de route, laten een Google-review achter en kunnen rechtstreeks bestellen of reserveren via de WhatsApp van het restaurant.",
         hero_cta_demo: "Bekijk demo",
         hero_cta_pricing: "Ontdek pakketten",
         hero_cta_contact: "Ik ben restauranthouder",
@@ -1435,12 +1466,14 @@
         hero_point_2: "Automatische meertaligheid",
         hero_point_3: "Snelle laadtijd",
         hero_point_4: "Bellen + GPS + WhatsApp",
+        hero_point_5: "Directe Google-review",
         mockup_badge: "TapCarta voorbeeld",
         mockup_title: "La Bonne Fourchette",
         mockup_sub: "Meertalig digitaal menu",
         mockup_call: "Bellen",
         mockup_route: "Route",
         mockup_whatsapp: "WhatsApp",
+        mockup_review: "Google-review",
         mockup_cat_1: "Voorgerechten",
         mockup_desc_1: "Krokant Belgisch recept",
         mockup_desc_2: "Parmezaan, rucola, olijfolie",
@@ -1456,7 +1489,7 @@
         feature_2_title: "Het menu past zich aan",
         feature_2_text: "De taal past zich automatisch aan en het menu blijft duidelijk leesbaar voor snelle consultatie aan tafel.",
         feature_3_title: "De klant onderneemt actie",
-        feature_3_text: "Direct bellen, WhatsApp, Google reviews of GPS: elke nuttige actie is bereikbaar met één tik.",
+        feature_3_text: "Direct bellen, WhatsApp, Google reviews, bestellen, reserveren of GPS: elke nuttige actie is bereikbaar met één tik.",
         demo_title: "Bekijk de volledige demonstratie",
         demo_text: "Open een volledig TapCarta-voorbeeldmenu en ontdek de ervaring precies zoals een klant die op zijn telefoon ziet.",
         demo_btn: "Open demo",
@@ -1477,19 +1510,21 @@
         plan_standard_period: "/ maand",
         plan_standard_li_1: "Volledig digitaal menu",
         plan_standard_li_2: "Automatische taaldetectie",
-        plan_standard_li_3: "4 talen inbegrepen*",
-        plan_standard_li_4: "1 menuwijziging per maand",
-        plan_standard_li_5: "Knoppen voor bellen, GPS, Google reviews en WhatsApp",
-        plan_standard_li_6: "Standaardlink: tapcarta.com/restaurantnaam",
+        plan_standard_li_3: "Foto’s van gerechten*",
+        plan_standard_li_4: "4 talen inbegrepen*",
+        plan_standard_li_5: "1 menuwijziging per maand",
+        plan_standard_li_6: "Knoppen voor bellen, GPS, Google reviews en WhatsApp",
+        plan_standard_li_7: "Standaardlink: tapcarta.com/nomduresto",
         plan_standard_btn: "Ontvang een voorstel",
         plan_premium_badge: "Geavanceerde versie",
         plan_premium_title: "Premium versie",
         plan_premium_desc: "Om verder te gaan met extra functies en een rijkere ervaring.",
         plan_premium_period: "/ maand",
         plan_premium_li_1: "Alles van Standard",
-        plan_premium_li_2: "Reservaties",
-        plan_premium_li_3: "Afhaalbestellingen",
+        plan_premium_li_2: "Reservaties via WhatsApp",
+        plan_premium_li_3: "Bestellingen via WhatsApp",
         plan_premium_li_4: "Prioritaire ondersteuning",
+        plan_premium_li_5: "Premium adres: nomduresto.tapcarta.com",
         plan_premium_note: "Kan worden uitgebreid met opties volgens de behoefte van het restaurant.",
         plan_premium_btn: "Bespreek het project",
         limits_label: "* Limieten om de ervaring vlot te houden:",
@@ -1504,7 +1539,7 @@
         contact_box_2_label: "Premium versie",
         contact_box_2_text: "Reservaties, afhaalbestellingen en meer geavanceerde mogelijkheden volgens het project.",
         contact_box_3_label: "Gepersonaliseerd adres",
-        contact_box_3_text: "Mogelijke optie met een premium adres zoals restaurantnaam.tapcarta.com.",
+        contact_box_3_text: "Mogelijke optie met een premium adres zoals nomduresto.tapcarta.com.",
         footer_powered: "Powered by",
         footer_link_1: "Werking",
         footer_link_2: "Demo",
@@ -1542,6 +1577,16 @@
 
       localStorage.setItem("tapcarta_lang", lang);
     }
+
+    function forceTopOnLoad(){
+      if(window.location.hash && window.location.hash !== "#top"){
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener("load", forceTopOnLoad);
+    window.addEventListener("pageshow", forceTopOnLoad);
 
     const initialLang = detectLanguage();
     applyLanguage(initialLang);
