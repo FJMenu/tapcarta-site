@@ -200,7 +200,8 @@
     .feature-card,
     .pricing-card,
     .contact-card,
-    .demo-card{
+    .demo-card,
+    .install-card{
       background:linear-gradient(180deg, rgba(255,255,255,.028), rgba(255,255,255,.014));
       border:1px solid var(--line);
       border-radius:var(--radius);
@@ -289,7 +290,7 @@
     }
 
     .btn-whatsapp:hover{
-      filter:brightness(1.05);
+      filter:brightness(1.06);
       transform:translateY(-1px);
     }
 
@@ -435,7 +436,7 @@
       color:var(--muted);
       font-size:18px;
       line-height:1.65;
-      max-width:820px;
+      max-width:880px;
     }
 
     .features-grid{
@@ -634,6 +635,49 @@
       color:var(--gold);
     }
 
+    .install-card{
+      margin-top:20px;
+      padding:24px;
+    }
+
+    .install-card h3{
+      margin:0 0 12px;
+      font-size:24px;
+      letter-spacing:-.02em;
+    }
+
+    .install-card p{
+      margin:0 0 12px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .install-card ul{
+      list-style:none;
+      padding:0;
+      margin:0 0 12px;
+      display:grid;
+      gap:10px;
+    }
+
+    .install-card li{
+      position:relative;
+      padding-left:24px;
+      color:#ececec;
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    .install-card li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold);
+      font-weight:900;
+    }
+
     .contact-card{
       padding:28px;
       display:grid;
@@ -796,7 +840,8 @@
       .feature-card,
       .pricing-card,
       .demo-card,
-      .contact-card{
+      .contact-card,
+      .install-card{
         padding:20px;
       }
 
@@ -1031,7 +1076,7 @@
         <div class="section-head">
           <h2 data-i18n="pricing_title_main">Des offres simples à comprendre</h2>
           <p data-i18n="pricing_text_main">
-            Commencez léger, passez au standard pour une vraie présence digitale, puis ajoutez uniquement les options utiles à votre restaurant.
+            Une version gratuite pour exister, une base solide à 30 € / mois, puis des options claires selon les besoins du restaurant.
           </p>
         </div>
 
@@ -1077,37 +1122,40 @@
               <li data-i18n="plan_standard_li_1">Menu digital accessible via QR code</li>
               <li data-i18n="plan_standard_li_2">Installation possible sur téléphone</li>
               <li data-i18n="plan_standard_li_3">Bouton WhatsApp</li>
-              <li data-i18n="plan_standard_li_4">Accès avis Google et GPS</li>
-              <li data-i18n="plan_standard_li_5">Détection automatique de la langue</li>
-              <li data-i18n="plan_standard_li_6">4 langues incluses<span class="asterisk">*</span></li>
-              <li data-i18n="plan_standard_li_7">1 modification du menu par mois</li>
-              <li data-i18n="plan_standard_li_8">Référencement du restaurant sur TapCarta</li>
+              <li data-i18n="plan_standard_li_4">Accès avis Google</li>
+              <li data-i18n="plan_standard_li_5">Accès GPS vers le restaurant</li>
+              <li data-i18n="plan_standard_li_6">Détection automatique de la langue</li>
+              <li data-i18n="plan_standard_li_7">Menu multilingue : 4 langues incluses<span class="asterisk">*</span></li>
+              <li data-i18n="plan_standard_li_8">1 modification du menu par mois</li>
+              <li data-i18n="plan_standard_li_9">Référencement du restaurant sur TapCarta</li>
             </ul>
 
             <a class="btn btn-primary" href="#contact" data-i18n="plan_standard_btn">Recevoir une proposition</a>
           </div>
 
           <div class="pricing-card">
-            <div class="plan-badge" data-i18n="plan_advanced_badge">Options & évolutions</div>
-            <h3 data-i18n="plan_advanced_title">À partir de 40€ / mois</h3>
-            <p class="plan-desc" data-i18n="plan_advanced_desc">
-              Ajoutez uniquement ce dont votre restaurant a besoin, sans payer pour des fonctions inutiles.
+            <div class="plan-badge" data-i18n="plan_options_badge">Options disponibles</div>
+            <h3 data-i18n="plan_options_title">Options</h3>
+            <p class="plan-desc" data-i18n="plan_options_desc">
+              Vous ajoutez uniquement les options utiles à votre restaurant. Rien n’est imposé.
             </p>
 
             <ul class="features">
-              <li data-i18n="plan_advanced_li_1">Site web simple : +10€ / mois</li>
-              <li data-i18n="plan_advanced_li_2">Commande et réservation via WhatsApp : +10€ / mois</li>
-              <li data-i18n="plan_advanced_li_3">Photos des plats<span class="asterisk">*</span> : +10€ / mois</li>
-              <li data-i18n="plan_advanced_li_4">Langue supplémentaire : +5€ / mois</li>
-              <li data-i18n="plan_advanced_li_5">Adresse personnalisée : 50€ / an</li>
-              <li data-i18n="plan_advanced_li_6">Exemple : nomduresto.tapcarta.com</li>
+              <li data-i18n="plan_options_li_1">Site web simple : +10 € / mois</li>
+              <li data-i18n="plan_options_li_2">Présentation du restaurant, accès au menu, informations et localisation GPS</li>
+              <li data-i18n="plan_options_li_3">Commande et réservation via WhatsApp : +10 € / mois</li>
+              <li data-i18n="plan_options_li_4">Les clients peuvent commander ou réserver directement via WhatsApp</li>
+              <li data-i18n="plan_options_li_5">Photos des plats dans le menu<span class="asterisk">*</span> : +10 € / mois</li>
+              <li data-i18n="plan_options_li_6">Jusqu’à 10 photos intégrées dans le menu digital</li>
+              <li data-i18n="plan_options_li_7">Adresse personnalisée : 50 € / an</li>
+              <li data-i18n="plan_options_li_8">Exemple : www.nomdurestaurant.tapcarta.com</li>
             </ul>
 
-            <div class="plan-note" data-i18n="plan_advanced_note">
-              Exemple : 30€ + site web simple = 40€ / mois. L’adresse personnalisée reste une option séparée.
+            <div class="plan-note" data-i18n="plan_options_note">
+              Les options viennent s’ajouter à la version Standard à 30 € / mois.
             </div>
 
-            <a class="btn btn-secondary" href="#contact" data-i18n="plan_advanced_btn">Construire mon offre</a>
+            <a class="btn btn-secondary" href="#contact" data-i18n="plan_options_btn">Composer mon offre</a>
           </div>
         </div>
 
@@ -1116,6 +1164,25 @@
           <span data-i18n="limits_text">
             photos des plats limitées à un maximum de 10 par menu. 4 langues sont incluses dans le forfait standard, avec un maximum total de 6 langues, afin de conserver une navigation claire, lisible et rapide sur téléphone.
           </span>
+        </div>
+
+        <div class="install-card">
+          <h3 data-i18n="install_title">Frais d’installation</h3>
+          <p data-i18n="install_text_1">
+            Les frais d’installation du service TapCarta sont fixés à 50 € HTVA.
+          </p>
+          <ul>
+            <li data-i18n="install_li_1">la configuration du menu digital</li>
+            <li data-i18n="install_li_2">la mise en place du QR code</li>
+            <li data-i18n="install_li_3">l’intégration des premières informations du restaurant</li>
+            <li data-i18n="install_li_4">la mise en ligne du menu</li>
+          </ul>
+          <p data-i18n="install_text_2">
+            Ces frais sont offerts dans le cadre d’un engagement minimum de 12 mois.
+          </p>
+          <p data-i18n="install_text_3">
+            Cette gratuité constitue une remise commerciale conditionnée au respect de la durée d’engagement.
+          </p>
         </div>
       </div>
     </section>
@@ -1145,16 +1212,16 @@
             </div>
 
             <div class="contact-item">
-              <div class="contact-item-label" data-i18n="contact_box_2_label">Conditions utiles</div>
+              <div class="contact-item-label" data-i18n="contact_box_2_label">Version Standard</div>
               <div class="contact-item-value" data-i18n="contact_box_2_text">
-                1 modification par mois incluse. Modification supplémentaire : 20 €. Délai maximum : 72 heures ouvrables.
+                Menu QR, WhatsApp, avis Google, GPS, 4 langues incluses et référencement TapCarta dès 30 € / mois.
               </div>
             </div>
 
             <div class="contact-item">
-              <div class="contact-item-label" data-i18n="contact_box_3_label">Installation & options</div>
+              <div class="contact-item-label" data-i18n="contact_box_3_label">Options</div>
               <div class="contact-item-value" data-i18n="contact_box_3_text">
-                Frais d’installation : 50 € HTVA, offerts avec engagement minimum de 12 mois. Adresse possible : nomduresto.tapcarta.com.
+                Site web simple, commande et réservation via WhatsApp, photos des plats et adresse personnalisée selon vos besoins.
               </div>
             </div>
           </div>
@@ -1235,7 +1302,7 @@
         demo_btn: "Ouvrir la démo",
 
         pricing_title_main: "Des offres simples à comprendre",
-        pricing_text_main: "Commencez léger, passez au standard pour une vraie présence digitale, puis ajoutez uniquement les options utiles à votre restaurant.",
+        pricing_text_main: "Une version gratuite pour exister, une base solide à 30 € / mois, puis des options claires selon les besoins du restaurant.",
 
         plan_light_badge: "Entrée de gamme",
         plan_light_title: "Version Light",
@@ -1254,27 +1321,39 @@
         plan_standard_li_1: "Menu digital accessible via QR code",
         plan_standard_li_2: "Installation possible sur téléphone",
         plan_standard_li_3: "Bouton WhatsApp",
-        plan_standard_li_4: "Accès avis Google et GPS",
-        plan_standard_li_5: "Détection automatique de la langue",
-        plan_standard_li_6: "4 langues incluses*",
-        plan_standard_li_7: "1 modification du menu par mois",
-        plan_standard_li_8: "Référencement du restaurant sur TapCarta",
+        plan_standard_li_4: "Accès avis Google",
+        plan_standard_li_5: "Accès GPS vers le restaurant",
+        plan_standard_li_6: "Détection automatique de la langue",
+        plan_standard_li_7: "Menu multilingue : 4 langues incluses*",
+        plan_standard_li_8: "1 modification du menu par mois",
+        plan_standard_li_9: "Référencement du restaurant sur TapCarta",
         plan_standard_btn: "Recevoir une proposition",
 
-        plan_advanced_badge: "Options & évolutions",
-        plan_advanced_title: "À partir de 40€ / mois",
-        plan_advanced_desc: "Ajoutez uniquement ce dont votre restaurant a besoin, sans payer pour des fonctions inutiles.",
-        plan_advanced_li_1: "Site web simple : +10€ / mois",
-        plan_advanced_li_2: "Commande et réservation via WhatsApp : +10€ / mois",
-        plan_advanced_li_3: "Photos des plats* : +10€ / mois",
-        plan_advanced_li_4: "Langue supplémentaire : +5€ / mois",
-        plan_advanced_li_5: "Adresse personnalisée : 50€ / an",
-        plan_advanced_li_6: "Exemple : nomduresto.tapcarta.com",
-        plan_advanced_note: "Exemple : 30€ + site web simple = 40€ / mois. L’adresse personnalisée reste une option séparée.",
-        plan_advanced_btn: "Construire mon offre",
+        plan_options_badge: "Options disponibles",
+        plan_options_title: "Options",
+        plan_options_desc: "Vous ajoutez uniquement les options utiles à votre restaurant. Rien n’est imposé.",
+        plan_options_li_1: "Site web simple : +10 € / mois",
+        plan_options_li_2: "Présentation du restaurant, accès au menu, informations et localisation GPS",
+        plan_options_li_3: "Commande et réservation via WhatsApp : +10 € / mois",
+        plan_options_li_4: "Les clients peuvent commander ou réserver directement via WhatsApp",
+        plan_options_li_5: "Photos des plats dans le menu* : +10 € / mois",
+        plan_options_li_6: "Jusqu’à 10 photos intégrées dans le menu digital",
+        plan_options_li_7: "Adresse personnalisée : 50 € / an",
+        plan_options_li_8: "Exemple : www.nomdurestaurant.tapcarta.com",
+        plan_options_note: "Les options viennent s’ajouter à la version Standard à 30 € / mois.",
+        plan_options_btn: "Composer mon offre",
 
         limits_label: "* Limites prévues pour garantir la fluidité :",
         limits_text: "photos des plats limitées à un maximum de 10 par menu. 4 langues sont incluses dans le forfait standard, avec un maximum total de 6 langues, afin de conserver une navigation claire, lisible et rapide sur téléphone.",
+
+        install_title: "Frais d’installation",
+        install_text_1: "Les frais d’installation du service TapCarta sont fixés à 50 € HTVA.",
+        install_li_1: "la configuration du menu digital",
+        install_li_2: "la mise en place du QR code",
+        install_li_3: "l’intégration des premières informations du restaurant",
+        install_li_4: "la mise en ligne du menu",
+        install_text_2: "Ces frais sont offerts dans le cadre d’un engagement minimum de 12 mois.",
+        install_text_3: "Cette gratuité constitue une remise commerciale conditionnée au respect de la durée d’engagement.",
 
         contact_title: "Vous êtes restaurateur ?",
         contact_text: "TapCarta est conçu pour être simple à mettre en place, agréable à présenter à vos clients et suffisamment clair pour être vendu facilement. Si vous voulez une version sérieuse, rapide et moderne de votre carte, c’est le bon point de départ.",
@@ -1283,10 +1362,10 @@
         contact_btn_mail: "Envoyer un email",
         contact_box_1_label: "Réponse rapide",
         contact_box_1_text: "Une question ? Nous vous répondons rapidement sur WhatsApp.",
-        contact_box_2_label: "Conditions utiles",
-        contact_box_2_text: "1 modification par mois incluse. Modification supplémentaire : 20 €. Délai maximum : 72 heures ouvrables.",
-        contact_box_3_label: "Installation & options",
-        contact_box_3_text: "Frais d’installation : 50 € HTVA, offerts avec engagement minimum de 12 mois. Adresse possible : nomduresto.tapcarta.com.",
+        contact_box_2_label: "Version Standard",
+        contact_box_2_text: "Menu QR, WhatsApp, avis Google, GPS, 4 langues incluses et référencement TapCarta dès 30 € / mois.",
+        contact_box_3_label: "Options",
+        contact_box_3_text: "Site web simple, commande et réservation via WhatsApp, photos des plats et adresse personnalisée selon vos besoins.",
 
         footer_powered: "Powered by",
         footer_brand: "TapCarta by FJ",
@@ -1345,7 +1424,7 @@
         demo_btn: "Abrir demo",
 
         pricing_title_main: "Planes fáciles de entender",
-        pricing_text_main: "Empieza ligero, pasa al estándar para una verdadera presencia digital y añade solo las opciones útiles para tu restaurante.",
+        pricing_text_main: "Una versión gratuita para existir, una base sólida a 30 € / mes y luego opciones claras según las necesidades del restaurante.",
 
         plan_light_badge: "Entrada de gama",
         plan_light_title: "Versión Light",
@@ -1359,32 +1438,44 @@
 
         plan_standard_badge: "Oferta principal",
         plan_standard_title: "Versión Standard",
-        plan_standard_desc: "La verdadera base de TapCarta para presentar tu carta, facilitar el contacto y ganar visibilidad online.",
+        plan_standard_desc: "La verdadera base TapCarta para presentar tu carta, facilitar el contacto y ganar visibilidad online.",
         plan_standard_period: "/ mes",
         plan_standard_li_1: "Menú digital accesible por código QR",
         plan_standard_li_2: "Instalación posible en el teléfono",
         plan_standard_li_3: "Botón WhatsApp",
-        plan_standard_li_4: "Acceso a reseñas Google y GPS",
-        plan_standard_li_5: "Detección automática del idioma",
-        plan_standard_li_6: "4 idiomas incluidos*",
-        plan_standard_li_7: "1 modificación del menú al mes",
-        plan_standard_li_8: "Referencia del restaurante en TapCarta",
+        plan_standard_li_4: "Acceso a reseñas Google",
+        plan_standard_li_5: "Acceso GPS al restaurante",
+        plan_standard_li_6: "Detección automática del idioma",
+        plan_standard_li_7: "Menú multilingüe: 4 idiomas incluidos*",
+        plan_standard_li_8: "1 modificación del menú al mes",
+        plan_standard_li_9: "Referencia del restaurante en TapCarta",
         plan_standard_btn: "Recibir propuesta",
 
-        plan_advanced_badge: "Opciones y evoluciones",
-        plan_advanced_title: "Desde 40€ / mes",
-        plan_advanced_desc: "Añade solo lo que realmente necesita tu restaurante, sin pagar por funciones inútiles.",
-        plan_advanced_li_1: "Web simple: +10€ / mes",
-        plan_advanced_li_2: "Pedido y reserva por WhatsApp: +10€ / mes",
-        plan_advanced_li_3: "Fotos de platos*: +10€ / mes",
-        plan_advanced_li_4: "Idioma adicional: +5€ / mes",
-        plan_advanced_li_5: "Dirección personalizada: 50€ / año",
-        plan_advanced_li_6: "Ejemplo: nomduresto.tapcarta.com",
-        plan_advanced_note: "Ejemplo: 30€ + web simple = 40€ / mes. La dirección personalizada sigue siendo una opción aparte.",
-        plan_advanced_btn: "Construir mi oferta",
+        plan_options_badge: "Opciones disponibles",
+        plan_options_title: "Opciones",
+        plan_options_desc: "Añades solo las opciones útiles para tu restaurante. Nada es obligatorio.",
+        plan_options_li_1: "Web simple: +10 € / mes",
+        plan_options_li_2: "Presentación del restaurante, acceso al menú, información y localización GPS",
+        plan_options_li_3: "Pedido y reserva por WhatsApp: +10 € / mes",
+        plan_options_li_4: "Los clientes pueden pedir o reservar directamente por WhatsApp",
+        plan_options_li_5: "Fotos de platos en el menú*: +10 € / mes",
+        plan_options_li_6: "Hasta 10 fotos integradas en el menú digital",
+        plan_options_li_7: "Dirección personalizada: 50 € / año",
+        plan_options_li_8: "Ejemplo: www.nomdurestaurant.tapcarta.com",
+        plan_options_note: "Las opciones se añaden a la versión Standard de 30 € / mes.",
+        plan_options_btn: "Componer mi oferta",
 
         limits_label: "* Límites previstos para garantizar fluidez:",
         limits_text: "las fotos de platos están limitadas a un máximo de 10 por menú. 4 idiomas están incluidos en el plan estándar, con un máximo total de 6 idiomas, para conservar una navegación clara, legible y rápida en el móvil.",
+
+        install_title: "Gastos de instalación",
+        install_text_1: "Los gastos de instalación del servicio TapCarta son de 50 € sin IVA.",
+        install_li_1: "la configuración del menú digital",
+        install_li_2: "la puesta en marcha del código QR",
+        install_li_3: "la integración de la información inicial del restaurante",
+        install_li_4: "la publicación del menú",
+        install_text_2: "Estos gastos son ofrecidos en el marco de un compromiso mínimo de 12 meses.",
+        install_text_3: "Esta gratuidad constituye un descuento comercial condicionado al respeto de la duración del compromiso.",
 
         contact_title: "¿Eres restaurador?",
         contact_text: "TapCarta está diseñado para ser fácil de implementar, agradable de presentar a tus clientes y lo bastante claro para venderse con facilidad. Si quieres una versión seria, rápida y moderna de tu carta, este es el buen punto de partida.",
@@ -1393,10 +1484,10 @@
         contact_btn_mail: "Enviar un email",
         contact_box_1_label: "Respuesta rápida",
         contact_box_1_text: "¿Una pregunta? Te respondemos rápidamente por WhatsApp.",
-        contact_box_2_label: "Condiciones útiles",
-        contact_box_2_text: "1 modificación al mes incluida. Modificación adicional: 20 €. Plazo máximo: 72 horas laborables.",
-        contact_box_3_label: "Instalación y opciones",
-        contact_box_3_text: "Gastos de instalación: 50 € sin IVA, ofrecidos con compromiso mínimo de 12 meses. Dirección posible: nomduresto.tapcarta.com.",
+        contact_box_2_label: "Versión Standard",
+        contact_box_2_text: "Menú QR, WhatsApp, reseñas Google, GPS, 4 idiomas incluidos y visibilidad TapCarta desde 30 € / mes.",
+        contact_box_3_label: "Opciones",
+        contact_box_3_text: "Web simple, pedido y reserva por WhatsApp, fotos de platos y dirección personalizada según tus necesidades.",
 
         footer_powered: "Powered by",
         footer_brand: "TapCarta by FJ",
@@ -1455,7 +1546,7 @@
         demo_btn: "Open demo",
 
         pricing_title_main: "Simple plans, easy to understand",
-        pricing_text_main: "Start light, move to standard for a real digital presence, then add only the options your restaurant actually needs.",
+        pricing_text_main: "A free version to exist, a solid €30 / month base, then clear options depending on the restaurant’s needs.",
 
         plan_light_badge: "Entry level",
         plan_light_title: "Light version",
@@ -1474,27 +1565,39 @@
         plan_standard_li_1: "Digital menu accessible via QR code",
         plan_standard_li_2: "Can be installed on the phone",
         plan_standard_li_3: "WhatsApp button",
-        plan_standard_li_4: "Google reviews and GPS access",
-        plan_standard_li_5: "Automatic language detection",
-        plan_standard_li_6: "4 languages included*",
-        plan_standard_li_7: "1 menu update per month",
-        plan_standard_li_8: "Restaurant listing on TapCarta",
+        plan_standard_li_4: "Google reviews access",
+        plan_standard_li_5: "GPS access to the restaurant",
+        plan_standard_li_6: "Automatic language detection",
+        plan_standard_li_7: "Multilingual menu: 4 languages included*",
+        plan_standard_li_8: "1 menu update per month",
+        plan_standard_li_9: "Restaurant listing on TapCarta",
         plan_standard_btn: "Get a proposal",
 
-        plan_advanced_badge: "Options & upgrades",
-        plan_advanced_title: "From €40 / month",
-        plan_advanced_desc: "Add only what your restaurant really needs, without paying for useless features.",
-        plan_advanced_li_1: "Simple website: +€10 / month",
-        plan_advanced_li_2: "Ordering and booking via WhatsApp: +€10 / month",
-        plan_advanced_li_3: "Dish photos*: +€10 / month",
-        plan_advanced_li_4: "Additional language: +€5 / month",
-        plan_advanced_li_5: "Custom address: €50 / year",
-        plan_advanced_li_6: "Example: nomduresto.tapcarta.com",
-        plan_advanced_note: "Example: €30 + simple website = €40 / month. The custom address remains a separate option.",
-        plan_advanced_btn: "Build my offer",
+        plan_options_badge: "Available options",
+        plan_options_title: "Options",
+        plan_options_desc: "You only add the options that are useful for your restaurant. Nothing is imposed.",
+        plan_options_li_1: "Simple website: +€10 / month",
+        plan_options_li_2: "Restaurant presentation, menu access, information and GPS location",
+        plan_options_li_3: "Ordering and booking via WhatsApp: +€10 / month",
+        plan_options_li_4: "Customers can order or book directly through WhatsApp",
+        plan_options_li_5: "Dish photos in the menu*: +€10 / month",
+        plan_options_li_6: "Up to 10 photos integrated into the digital menu",
+        plan_options_li_7: "Custom address: €50 / year",
+        plan_options_li_8: "Example: www.nomdurestaurant.tapcarta.com",
+        plan_options_note: "Options are added to the Standard version at €30 / month.",
+        plan_options_btn: "Build my offer",
 
         limits_label: "* Limits designed to keep the experience smooth:",
         limits_text: "dish photos are limited to a maximum of 10 per menu. 4 languages are included in the standard plan, with a total maximum of 6 languages, in order to keep navigation clear, readable and fast on mobile.",
+
+        install_title: "Installation fee",
+        install_text_1: "The installation fee for the TapCarta service is €50 excl. VAT.",
+        install_li_1: "digital menu configuration",
+        install_li_2: "QR code setup",
+        install_li_3: "integration of the restaurant’s initial information",
+        install_li_4: "menu publishing",
+        install_text_2: "These fees are waived with a minimum 12-month commitment.",
+        install_text_3: "This free setup is a commercial discount conditional on respecting the commitment period.",
 
         contact_title: "Are you a restaurant owner?",
         contact_text: "TapCarta is designed to be easy to set up, pleasant to present to your customers and clear enough to sell easily. If you want a serious, fast and modern version of your menu, this is the right starting point.",
@@ -1503,10 +1606,10 @@
         contact_btn_mail: "Send an email",
         contact_box_1_label: "Fast reply",
         contact_box_1_text: "A question? We reply quickly on WhatsApp.",
-        contact_box_2_label: "Useful conditions",
-        contact_box_2_text: "1 update per month included. Additional update: €20. Maximum delay: 72 working hours.",
-        contact_box_3_label: "Setup & options",
-        contact_box_3_text: "Setup fee: €50 excl. VAT, waived with a minimum 12-month commitment. Possible address: nomduresto.tapcarta.com.",
+        contact_box_2_label: "Standard version",
+        contact_box_2_text: "QR menu, WhatsApp, Google reviews, GPS, 4 languages included and TapCarta visibility from €30 / month.",
+        contact_box_3_label: "Options",
+        contact_box_3_text: "Simple website, ordering and booking via WhatsApp, dish photos and custom address depending on your needs.",
 
         footer_powered: "Powered by",
         footer_brand: "TapCarta by FJ",
@@ -1565,7 +1668,7 @@
         demo_btn: "Open demo",
 
         pricing_title_main: "Eenvoudige pakketten, makkelijk te begrijpen",
-        pricing_text_main: "Begin licht, stap over naar standaard voor een echte digitale aanwezigheid en voeg daarna alleen de opties toe die uw restaurant echt nodig heeft.",
+        pricing_text_main: "Een gratis versie om aanwezig te zijn, een solide basis van €30 / maand en daarna duidelijke opties volgens de noden van het restaurant.",
 
         plan_light_badge: "Instapniveau",
         plan_light_title: "Light versie",
@@ -1584,27 +1687,39 @@
         plan_standard_li_1: "Digitaal menu toegankelijk via QR-code",
         plan_standard_li_2: "Installatie mogelijk op de telefoon",
         plan_standard_li_3: "WhatsApp-knop",
-        plan_standard_li_4: "Toegang tot Google reviews en GPS",
-        plan_standard_li_5: "Automatische taaldetectie",
-        plan_standard_li_6: "4 talen inbegrepen*",
-        plan_standard_li_7: "1 menuwijziging per maand",
-        plan_standard_li_8: "Vermelding van het restaurant op TapCarta",
+        plan_standard_li_4: "Toegang tot Google reviews",
+        plan_standard_li_5: "GPS-toegang naar het restaurant",
+        plan_standard_li_6: "Automatische taaldetectie",
+        plan_standard_li_7: "Meertalig menu: 4 talen inbegrepen*",
+        plan_standard_li_8: "1 menuwijziging per maand",
+        plan_standard_li_9: "Vermelding van het restaurant op TapCarta",
         plan_standard_btn: "Ontvang een voorstel",
 
-        plan_advanced_badge: "Opties en uitbreidingen",
-        plan_advanced_title: "Vanaf €40 / maand",
-        plan_advanced_desc: "Voeg alleen toe wat uw restaurant echt nodig heeft, zonder te betalen voor nutteloze functies.",
-        plan_advanced_li_1: "Eenvoudige website: +€10 / maand",
-        plan_advanced_li_2: "Bestellen en reserveren via WhatsApp: +€10 / maand",
-        plan_advanced_li_3: "Foto’s van gerechten*: +€10 / maand",
-        plan_advanced_li_4: "Extra taal: +€5 / maand",
-        plan_advanced_li_5: "Gepersonaliseerd adres: €50 / jaar",
-        plan_advanced_li_6: "Voorbeeld: nomduresto.tapcarta.com",
-        plan_advanced_note: "Voorbeeld: €30 + eenvoudige website = €40 / maand. Het gepersonaliseerde adres blijft een aparte optie.",
-        plan_advanced_btn: "Mijn aanbod samenstellen",
+        plan_options_badge: "Beschikbare opties",
+        plan_options_title: "Opties",
+        plan_options_desc: "U voegt alleen de opties toe die nuttig zijn voor uw restaurant. Niets is verplicht.",
+        plan_options_li_1: "Eenvoudige website: +€10 / maand",
+        plan_options_li_2: "Presentatie van het restaurant, toegang tot het menu, informatie en GPS-locatie",
+        plan_options_li_3: "Bestellen en reserveren via WhatsApp: +€10 / maand",
+        plan_options_li_4: "Klanten kunnen rechtstreeks bestellen of reserveren via WhatsApp",
+        plan_options_li_5: "Foto’s van gerechten in het menu*: +€10 / maand",
+        plan_options_li_6: "Tot 10 foto’s geïntegreerd in het digitale menu",
+        plan_options_li_7: "Gepersonaliseerd adres: €50 / jaar",
+        plan_options_li_8: "Voorbeeld: www.nomdurestaurant.tapcarta.com",
+        plan_options_note: "Opties worden toegevoegd aan de Standard-versie van €30 / maand.",
+        plan_options_btn: "Mijn aanbod samenstellen",
 
         limits_label: "* Limieten om de ervaring vlot te houden:",
         limits_text: "foto’s van gerechten zijn beperkt tot maximaal 10 per menu. 4 talen zijn inbegrepen in het standaardpakket, met een totaal maximum van 6 talen, om de navigatie duidelijk, leesbaar en snel te houden op mobiel.",
+
+        install_title: "Installatiekosten",
+        install_text_1: "De installatiekosten van de TapCarta-service bedragen €50 excl. btw.",
+        install_li_1: "de configuratie van het digitale menu",
+        install_li_2: "de opzet van de QR-code",
+        install_li_3: "de integratie van de eerste informatie van het restaurant",
+        install_li_4: "de online plaatsing van het menu",
+        install_text_2: "Deze kosten zijn gratis bij een minimum engagement van 12 maanden.",
+        install_text_3: "Deze gratis installatie is een commerciële korting onder voorwaarde van naleving van de engagementsduur.",
 
         contact_title: "Bent u restauranthouder?",
         contact_text: "TapCarta is ontworpen om eenvoudig te installeren, aangenaam om aan klanten te tonen en duidelijk genoeg om vlot te verkopen. Als u een serieuze, snelle en moderne versie van uw kaart wilt, is dit het juiste vertrekpunt.",
@@ -1613,10 +1728,10 @@
         contact_btn_mail: "Stuur een e-mail",
         contact_box_1_label: "Snel antwoord",
         contact_box_1_text: "Een vraag? Wij antwoorden snel via WhatsApp.",
-        contact_box_2_label: "Nuttige voorwaarden",
-        contact_box_2_text: "1 wijziging per maand inbegrepen. Extra wijziging: €20. Maximale termijn: 72 werkuren.",
-        contact_box_3_label: "Installatie en opties",
-        contact_box_3_text: "Installatiekost: €50 excl. btw, gratis bij een minimum engagement van 12 maanden. Mogelijk adres: nomduresto.tapcarta.com.",
+        contact_box_2_label: "Standaard versie",
+        contact_box_2_text: "QR-menu, WhatsApp, Google reviews, GPS, 4 talen inbegrepen en TapCarta-zichtbaarheid vanaf €30 / maand.",
+        contact_box_3_label: "Opties",
+        contact_box_3_text: "Eenvoudige website, bestellen en reserveren via WhatsApp, foto’s van gerechten en gepersonaliseerd adres volgens uw noden.",
 
         footer_powered: "Powered by",
         footer_brand: "TapCarta by FJ",
