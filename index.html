@@ -24,6 +24,7 @@
       --shadow:0 18px 50px rgba(0,0,0,.38);
       --radius:22px;
       --max:1180px;
+      --wa:#1fa855;
     }
 
     *{
@@ -280,6 +281,16 @@
     .btn-secondary:hover{
       border-color:rgba(242,199,68,.35);
       color:var(--gold);
+    }
+
+    .btn-whatsapp{
+      background:var(--wa);
+      color:#fff;
+    }
+
+    .btn-whatsapp:hover{
+      filter:brightness(1.05);
+      transform:translateY(-1px);
     }
 
     .hero-points{
@@ -540,7 +551,7 @@
       margin:0 0 20px;
       color:var(--muted);
       line-height:1.6;
-      min-height:74px;
+      min-height:96px;
       font-size:15px;
     }
 
@@ -626,7 +637,7 @@
     .contact-card{
       padding:28px;
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.08fr .92fr;
       gap:20px;
       align-items:start;
     }
@@ -695,15 +706,28 @@
     .powered{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
       color:var(--muted);
       font-size:15px;
       flex-wrap:wrap;
     }
 
+    .powered-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      line-height:1.25;
+    }
+
+    .powered-text strong{
+      color:#fff;
+      font-size:16px;
+      font-weight:800;
+    }
+
     .fj-logo-wrap{
-      width:52px;
-      height:52px;
+      width:54px;
+      height:54px;
       border-radius:14px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.10);
@@ -863,7 +887,7 @@
           <h1 data-i18n="hero_title">Le menu QR intelligent pour restaurants</h1>
 
           <p class="lead" data-i18n="hero_text">
-            TapCarta transforme votre carte en expérience mobile rapide, élégante et multilingue. Vos clients scannent, consultent, appellent, trouvent l’itinéraire, laissent un avis Google et peuvent commander ou réserver directement via le WhatsApp du restaurateur.
+            TapCarta transforme votre carte en expérience mobile rapide, élégante et multilingue. Vos clients scannent, consultent, trouvent l’itinéraire, laissent un avis Google et peuvent commander ou réserver directement via le WhatsApp du restaurateur.
           </p>
 
           <div class="hero-actions">
@@ -876,8 +900,8 @@
             <div class="hero-point" data-i18n="hero_point_1">QR code permanent</div>
             <div class="hero-point" data-i18n="hero_point_2">Multilingue automatique</div>
             <div class="hero-point" data-i18n="hero_point_3">Chargement rapide</div>
-            <div class="hero-point" data-i18n="hero_point_4">Appel + GPS + WhatsApp</div>
-            <div class="hero-point" data-i18n="hero_point_5">Avis Google direct</div>
+            <div class="hero-point" data-i18n="hero_point_4">WhatsApp + GPS + avis Google</div>
+            <div class="hero-point" data-i18n="hero_point_5">Référencement TapCarta dès 30€</div>
           </div>
         </div>
 
@@ -891,10 +915,10 @@
               </div>
 
               <div class="screen-actions">
-                <div class="screen-action" data-i18n="mockup_call">Appeler</div>
-                <div class="screen-action" data-i18n="mockup_route">Itinéraire</div>
                 <div class="screen-action" data-i18n="mockup_whatsapp">WhatsApp</div>
+                <div class="screen-action" data-i18n="mockup_route">Itinéraire</div>
                 <div class="screen-action" data-i18n="mockup_review">Avis Google</div>
+                <div class="screen-action" data-i18n="mockup_booking">Réserver</div>
               </div>
 
               <div class="screen-section">
@@ -980,7 +1004,7 @@
             <div class="feature-icon">3</div>
             <h3 data-i18n="feature_3_title">Le client agit</h3>
             <p data-i18n="feature_3_text">
-              Appel direct, WhatsApp, avis Google, commande, réservation ou GPS : chaque action utile est accessible en un geste.
+              WhatsApp, avis Google, commande, réservation ou GPS : chaque action utile est accessible en un geste.
             </p>
           </div>
         </div>
@@ -1007,7 +1031,7 @@
         <div class="section-head">
           <h2 data-i18n="pricing_title_main">Des offres simples à comprendre</h2>
           <p data-i18n="pricing_text_main">
-            Choisissez une version légère pour exister, une version standard pour bien présenter votre carte, ou une version premium pour aller plus loin.
+            Commencez léger, passez au standard pour une vraie présence digitale, puis ajoutez uniquement les options utiles à votre restaurant.
           </p>
         </div>
 
@@ -1016,7 +1040,7 @@
             <div class="plan-badge" data-i18n="plan_light_badge">Entrée de gamme</div>
             <h3 data-i18n="plan_light_title">Version Light</h3>
             <p class="plan-desc" data-i18n="plan_light_desc">
-              Une version ultra légère pour une présence simple et immédiate.
+              Une version ultra légère pour une présence simple, rapide et immédiate.
             </p>
 
             <div class="price">
@@ -1041,7 +1065,7 @@
             <div class="plan-badge gold" data-i18n="plan_standard_badge">Offre principale</div>
             <h3 data-i18n="plan_standard_title">Version Standard</h3>
             <p class="plan-desc" data-i18n="plan_standard_desc">
-              Le cœur de l’offre TapCarta pour présenter une vraie carte digitale moderne.
+              La vraie base TapCarta pour présenter votre carte, être joignable facilement et gagner en visibilité en ligne.
             </p>
 
             <div class="price">
@@ -1050,43 +1074,40 @@
             </div>
 
             <ul class="features">
-              <li data-i18n="plan_standard_li_1">Menu digital complet</li>
-              <li data-i18n="plan_standard_li_2">Détection automatique de la langue</li>
-              <li data-i18n="plan_standard_li_3">Photos des plats<span class="asterisk">*</span></li>
-              <li data-i18n="plan_standard_li_4">4 langues incluses<span class="asterisk">*</span></li>
-              <li data-i18n="plan_standard_li_5">1 modification du menu par mois</li>
-              <li data-i18n="plan_standard_li_6">Boutons appel, GPS, avis Google, WhatsApp</li>
-              <li data-i18n="plan_standard_li_7">Lien standard : tapcarta.com/nomduresto</li>
+              <li data-i18n="plan_standard_li_1">Menu digital accessible via QR code</li>
+              <li data-i18n="plan_standard_li_2">Installation possible sur téléphone</li>
+              <li data-i18n="plan_standard_li_3">Bouton WhatsApp</li>
+              <li data-i18n="plan_standard_li_4">Accès avis Google et GPS</li>
+              <li data-i18n="plan_standard_li_5">Détection automatique de la langue</li>
+              <li data-i18n="plan_standard_li_6">4 langues incluses<span class="asterisk">*</span></li>
+              <li data-i18n="plan_standard_li_7">1 modification du menu par mois</li>
+              <li data-i18n="plan_standard_li_8">Référencement du restaurant sur TapCarta</li>
             </ul>
 
             <a class="btn btn-primary" href="#contact" data-i18n="plan_standard_btn">Recevoir une proposition</a>
           </div>
 
           <div class="pricing-card">
-            <div class="plan-badge" data-i18n="plan_premium_badge">Version avancée</div>
-            <h3 data-i18n="plan_premium_title">Version Premium</h3>
-            <p class="plan-desc" data-i18n="plan_premium_desc">
-              Pour aller plus loin avec des fonctions supplémentaires et une expérience plus riche.
+            <div class="plan-badge" data-i18n="plan_advanced_badge">Options & évolutions</div>
+            <h3 data-i18n="plan_advanced_title">À partir de 40€ / mois</h3>
+            <p class="plan-desc" data-i18n="plan_advanced_desc">
+              Ajoutez uniquement ce dont votre restaurant a besoin, sans payer pour des fonctions inutiles.
             </p>
 
-            <div class="price">
-              <div class="amount">40€</div>
-              <div class="period" data-i18n="plan_premium_period">/ mois</div>
-            </div>
-
             <ul class="features">
-              <li data-i18n="plan_premium_li_1">Tout le Standard</li>
-              <li data-i18n="plan_premium_li_2">Réservations via WhatsApp</li>
-              <li data-i18n="plan_premium_li_3">Commandes via WhatsApp</li>
-              <li data-i18n="plan_premium_li_4">Support prioritaire</li>
-              <li data-i18n="plan_premium_li_5">Adresse premium : nomduresto.tapcarta.com</li>
+              <li data-i18n="plan_advanced_li_1">Site web simple : +10€ / mois</li>
+              <li data-i18n="plan_advanced_li_2">Commande et réservation via WhatsApp : +10€ / mois</li>
+              <li data-i18n="plan_advanced_li_3">Photos des plats<span class="asterisk">*</span> : +10€ / mois</li>
+              <li data-i18n="plan_advanced_li_4">Langue supplémentaire : +5€ / mois</li>
+              <li data-i18n="plan_advanced_li_5">Adresse personnalisée : 50€ / an</li>
+              <li data-i18n="plan_advanced_li_6">Exemple : nomduresto.tapcarta.com</li>
             </ul>
 
-            <div class="plan-note" data-i18n="plan_premium_note">
-              Peut être enrichi par des options selon le besoin du restaurant.
+            <div class="plan-note" data-i18n="plan_advanced_note">
+              Exemple : 30€ + site web simple = 40€ / mois. L’adresse personnalisée reste une option séparée.
             </div>
 
-            <a class="btn btn-secondary" href="#contact" data-i18n="plan_premium_btn">Parler du projet</a>
+            <a class="btn btn-secondary" href="#contact" data-i18n="plan_advanced_btn">Construire mon offre</a>
           </div>
         </div>
 
@@ -1110,30 +1131,30 @@
 
             <div class="contact-actions">
               <a class="btn btn-primary" href="./demo/" data-i18n="contact_btn_demo">Voir la démo</a>
-              <a class="btn btn-secondary" href="mailto:contact@tapcarta.com" data-i18n="contact_btn_mail">Demander une proposition</a>
-              <a class="btn btn-secondary" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="contact_btn_whatsapp">WhatsApp</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/34672486699?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20TapCarta." target="_blank" rel="noopener" data-i18n="contact_btn_whatsapp">Contacter TapCarta sur WhatsApp</a>
+              <a class="btn btn-secondary" href="mailto:fj.es@outlook.be" data-i18n="contact_btn_mail">Envoyer un email</a>
             </div>
           </div>
 
           <div class="contact-list">
             <div class="contact-item">
-              <div class="contact-item-label" data-i18n="contact_box_1_label">Version standard</div>
+              <div class="contact-item-label" data-i18n="contact_box_1_label">Réponse rapide</div>
               <div class="contact-item-value" data-i18n="contact_box_1_text">
-                Une vraie carte digitale, multilingue, prête à être utilisée via QR code.
+                Une question ? Nous vous répondons rapidement sur WhatsApp.
               </div>
             </div>
 
             <div class="contact-item">
-              <div class="contact-item-label" data-i18n="contact_box_2_label">Version premium</div>
+              <div class="contact-item-label" data-i18n="contact_box_2_label">Conditions utiles</div>
               <div class="contact-item-value" data-i18n="contact_box_2_text">
-                Réservations, commandes à emporter et possibilités plus avancées selon le projet.
+                1 modification par mois incluse. Modification supplémentaire : 20 €. Délai maximum : 72 heures ouvrables.
               </div>
             </div>
 
             <div class="contact-item">
-              <div class="contact-item-label" data-i18n="contact_box_3_label">Adresse personnalisée</div>
+              <div class="contact-item-label" data-i18n="contact_box_3_label">Installation & options</div>
               <div class="contact-item-value" data-i18n="contact_box_3_text">
-                Option possible avec une adresse premium du type nomduresto.tapcarta.com.
+                Frais d’installation : 50 € HTVA, offerts avec engagement minimum de 12 mois. Adresse possible : nomduresto.tapcarta.com.
               </div>
             </div>
           </div>
@@ -1145,10 +1166,13 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="powered">
-        <span data-i18n="footer_powered">Powered by</span>
         <span class="fj-logo-wrap" aria-label="FJ">
           <img src="ChatGPT Image 14 févr. 2026, 15_23_38.png" alt="Logo FJ" class="fj-logo">
         </span>
+        <div class="powered-text">
+          <span data-i18n="footer_powered">Powered by</span>
+          <strong data-i18n="footer_brand">TapCarta by FJ</strong>
+        </div>
       </div>
 
       <div class="footer-links">
@@ -1168,24 +1192,26 @@
         nav_demo: "Démo",
         nav_pricing: "Offres",
         nav_contact: "Contact",
+
         hero_badge: "Solution digitale pensée pour le mobile",
         hero_title: "Le menu QR intelligent pour restaurants",
-        hero_text: "TapCarta transforme votre carte en expérience mobile rapide, élégante et multilingue. Vos clients scannent, consultent, appellent, trouvent l’itinéraire, laissent un avis Google et peuvent commander ou réserver directement via le WhatsApp du restaurateur.",
+        hero_text: "TapCarta transforme votre carte en expérience mobile rapide, élégante et multilingue. Vos clients scannent, consultent, trouvent l’itinéraire, laissent un avis Google et peuvent commander ou réserver directement via le WhatsApp du restaurateur.",
         hero_cta_demo: "Voir la démo",
         hero_cta_pricing: "Découvrir les offres",
         hero_cta_contact: "Je suis restaurateur",
         hero_point_1: "QR code permanent",
         hero_point_2: "Multilingue automatique",
         hero_point_3: "Chargement rapide",
-        hero_point_4: "Appel + GPS + WhatsApp",
-        hero_point_5: "Avis Google direct",
+        hero_point_4: "WhatsApp + GPS + avis Google",
+        hero_point_5: "Référencement TapCarta dès 30€",
+
         mockup_badge: "Exemple TapCarta",
         mockup_title: "La Bonne Fourchette",
         mockup_sub: "Menu digital multilingue",
-        mockup_call: "Appeler",
-        mockup_route: "Itinéraire",
         mockup_whatsapp: "WhatsApp",
+        mockup_route: "Itinéraire",
         mockup_review: "Avis Google",
+        mockup_booking: "Réserver",
         mockup_cat_1: "Entrées",
         mockup_desc_1: "Recette belge croustillante",
         mockup_desc_2: "Parmesan, roquette, huile d’olive",
@@ -1194,6 +1220,7 @@
         mockup_desc_4: "Classique maison",
         mockup_cat_3: "Desserts",
         mockup_desc_5: "Simple et efficace",
+
         features_title: "Une solution claire, rapide et utile",
         features_text: "TapCarta est pensé pour les restaurants qui veulent une présence mobile propre, moderne et facile à comprendre pour leurs clients.",
         feature_1_title: "Le client scanne",
@@ -1201,87 +1228,100 @@
         feature_2_title: "Le menu s’adapte",
         feature_2_text: "La langue s’adapte automatiquement et la lecture reste claire pour une consultation rapide à table.",
         feature_3_title: "Le client agit",
-        feature_3_text: "Appel direct, WhatsApp, avis Google, commande, réservation ou GPS : chaque action utile est accessible en un geste.",
+        feature_3_text: "WhatsApp, avis Google, commande, réservation ou GPS : chaque action utile est accessible en un geste.",
+
         demo_title: "Voir la démonstration complète",
         demo_text: "Ouvrez un exemple complet de menu TapCarta et découvrez l’expérience telle qu’un client la vit sur son téléphone.",
         demo_btn: "Ouvrir la démo",
+
         pricing_title_main: "Des offres simples à comprendre",
-        pricing_text_main: "Choisissez une version légère pour exister, une version standard pour bien présenter votre carte, ou une version premium pour aller plus loin.",
+        pricing_text_main: "Commencez léger, passez au standard pour une vraie présence digitale, puis ajoutez uniquement les options utiles à votre restaurant.",
+
         plan_light_badge: "Entrée de gamme",
         plan_light_title: "Version Light",
-        plan_light_desc: "Une version ultra légère pour une présence simple et immédiate.",
+        plan_light_desc: "Une version ultra légère pour une présence simple, rapide et immédiate.",
         plan_light_period: "gratuit",
         plan_light_li_1: "Localisation du restaurant",
         plan_light_li_2: "Bouton appel direct",
         plan_light_li_3: "QR code permanent",
         plan_light_note: "Idéal pour démarrer avec une présence minimale mais propre.",
         plan_light_btn: "Demander des infos",
+
         plan_standard_badge: "Offre principale",
         plan_standard_title: "Version Standard",
-        plan_standard_desc: "Le cœur de l’offre TapCarta pour présenter une vraie carte digitale moderne.",
+        plan_standard_desc: "La vraie base TapCarta pour présenter votre carte, être joignable facilement et gagner en visibilité en ligne.",
         plan_standard_period: "/ mois",
-        plan_standard_li_1: "Menu digital complet",
-        plan_standard_li_2: "Détection automatique de la langue",
-        plan_standard_li_3: "Photos des plats*",
-        plan_standard_li_4: "4 langues incluses*",
-        plan_standard_li_5: "1 modification du menu par mois",
-        plan_standard_li_6: "Boutons appel, GPS, avis Google, WhatsApp",
-        plan_standard_li_7: "Lien standard : tapcarta.com/nomduresto",
+        plan_standard_li_1: "Menu digital accessible via QR code",
+        plan_standard_li_2: "Installation possible sur téléphone",
+        plan_standard_li_3: "Bouton WhatsApp",
+        plan_standard_li_4: "Accès avis Google et GPS",
+        plan_standard_li_5: "Détection automatique de la langue",
+        plan_standard_li_6: "4 langues incluses*",
+        plan_standard_li_7: "1 modification du menu par mois",
+        plan_standard_li_8: "Référencement du restaurant sur TapCarta",
         plan_standard_btn: "Recevoir une proposition",
-        plan_premium_badge: "Version avancée",
-        plan_premium_title: "Version Premium",
-        plan_premium_desc: "Pour aller plus loin avec des fonctions supplémentaires et une expérience plus riche.",
-        plan_premium_period: "/ mois",
-        plan_premium_li_1: "Tout le Standard",
-        plan_premium_li_2: "Réservations via WhatsApp",
-        plan_premium_li_3: "Commandes via WhatsApp",
-        plan_premium_li_4: "Support prioritaire",
-        plan_premium_li_5: "Adresse premium : nomduresto.tapcarta.com",
-        plan_premium_note: "Peut être enrichi par des options selon le besoin du restaurant.",
-        plan_premium_btn: "Parler du projet",
+
+        plan_advanced_badge: "Options & évolutions",
+        plan_advanced_title: "À partir de 40€ / mois",
+        plan_advanced_desc: "Ajoutez uniquement ce dont votre restaurant a besoin, sans payer pour des fonctions inutiles.",
+        plan_advanced_li_1: "Site web simple : +10€ / mois",
+        plan_advanced_li_2: "Commande et réservation via WhatsApp : +10€ / mois",
+        plan_advanced_li_3: "Photos des plats* : +10€ / mois",
+        plan_advanced_li_4: "Langue supplémentaire : +5€ / mois",
+        plan_advanced_li_5: "Adresse personnalisée : 50€ / an",
+        plan_advanced_li_6: "Exemple : nomduresto.tapcarta.com",
+        plan_advanced_note: "Exemple : 30€ + site web simple = 40€ / mois. L’adresse personnalisée reste une option séparée.",
+        plan_advanced_btn: "Construire mon offre",
+
         limits_label: "* Limites prévues pour garantir la fluidité :",
         limits_text: "photos des plats limitées à un maximum de 10 par menu. 4 langues sont incluses dans le forfait standard, avec un maximum total de 6 langues, afin de conserver une navigation claire, lisible et rapide sur téléphone.",
+
         contact_title: "Vous êtes restaurateur ?",
         contact_text: "TapCarta est conçu pour être simple à mettre en place, agréable à présenter à vos clients et suffisamment clair pour être vendu facilement. Si vous voulez une version sérieuse, rapide et moderne de votre carte, c’est le bon point de départ.",
         contact_btn_demo: "Voir la démo",
-        contact_btn_mail: "Demander une proposition",
-        contact_btn_whatsapp: "WhatsApp",
-        contact_box_1_label: "Version standard",
-        contact_box_1_text: "Une vraie carte digitale, multilingue, prête à être utilisée via QR code.",
-        contact_box_2_label: "Version premium",
-        contact_box_2_text: "Réservations, commandes à emporter et possibilités plus avancées selon le projet.",
-        contact_box_3_label: "Adresse personnalisée",
-        contact_box_3_text: "Option possible avec une adresse premium du type nomduresto.tapcarta.com.",
+        contact_btn_whatsapp: "Contacter TapCarta sur WhatsApp",
+        contact_btn_mail: "Envoyer un email",
+        contact_box_1_label: "Réponse rapide",
+        contact_box_1_text: "Une question ? Nous vous répondons rapidement sur WhatsApp.",
+        contact_box_2_label: "Conditions utiles",
+        contact_box_2_text: "1 modification par mois incluse. Modification supplémentaire : 20 €. Délai maximum : 72 heures ouvrables.",
+        contact_box_3_label: "Installation & options",
+        contact_box_3_text: "Frais d’installation : 50 € HTVA, offerts avec engagement minimum de 12 mois. Adresse possible : nomduresto.tapcarta.com.",
+
         footer_powered: "Powered by",
+        footer_brand: "TapCarta by FJ",
         footer_link_1: "Fonctionnement",
         footer_link_2: "Démo",
         footer_link_3: "Offres",
         footer_link_4: "Contact"
       },
+
       es: {
         brand_sub: "Menú QR para restaurantes",
         nav_features: "Funcionamiento",
         nav_demo: "Demo",
         nav_pricing: "Planes",
         nav_contact: "Contacto",
+
         hero_badge: "Solución digital pensada para móvil",
         hero_title: "El menú QR inteligente para restaurantes",
-        hero_text: "TapCarta convierte tu carta en una experiencia móvil rápida, elegante y multilingüe. Tus clientes escanean, consultan, llaman, encuentran la ruta, dejan una reseña en Google y pueden pedir o reservar directamente por el WhatsApp del restaurante.",
+        hero_text: "TapCarta convierte tu carta en una experiencia móvil rápida, elegante y multilingüe. Tus clientes escanean, consultan, encuentran la ruta, dejan una reseña en Google y pueden pedir o reservar directamente por el WhatsApp del restaurante.",
         hero_cta_demo: "Ver la demo",
         hero_cta_pricing: "Descubrir planes",
         hero_cta_contact: "Soy restaurador",
         hero_point_1: "Código QR permanente",
         hero_point_2: "Multilingüe automático",
         hero_point_3: "Carga rápida",
-        hero_point_4: "Llamada + GPS + WhatsApp",
-        hero_point_5: "Reseña Google directa",
+        hero_point_4: "WhatsApp + GPS + reseñas Google",
+        hero_point_5: "Visibilidad TapCarta desde 30€",
+
         mockup_badge: "Ejemplo TapCarta",
         mockup_title: "La Bonne Fourchette",
         mockup_sub: "Menú digital multilingüe",
-        mockup_call: "Llamar",
-        mockup_route: "Ruta",
         mockup_whatsapp: "WhatsApp",
+        mockup_route: "Ruta",
         mockup_review: "Reseña Google",
+        mockup_booking: "Reservar",
         mockup_cat_1: "Entrantes",
         mockup_desc_1: "Receta belga crujiente",
         mockup_desc_2: "Parmesano, rúcula, aceite de oliva",
@@ -1290,6 +1330,7 @@
         mockup_desc_4: "Clásico de la casa",
         mockup_cat_3: "Postres",
         mockup_desc_5: "Simple y eficaz",
+
         features_title: "Una solución clara, rápida y útil",
         features_text: "TapCarta está pensado para restaurantes que quieren una presencia móvil limpia, moderna y fácil de entender para sus clientes.",
         feature_1_title: "El cliente escanea",
@@ -1297,87 +1338,100 @@
         feature_2_title: "El menú se adapta",
         feature_2_text: "El idioma se adapta automáticamente y la lectura sigue siendo clara para una consulta rápida en mesa.",
         feature_3_title: "El cliente actúa",
-        feature_3_text: "Llamada directa, WhatsApp, reseñas Google, pedido, reserva o GPS: cada acción útil está disponible en un gesto.",
+        feature_3_text: "WhatsApp, reseñas Google, pedido, reserva o GPS: cada acción útil está disponible en un gesto.",
+
         demo_title: "Ver la demostración completa",
         demo_text: "Abre un ejemplo completo de menú TapCarta y descubre la experiencia tal como la vive un cliente en su teléfono.",
         demo_btn: "Abrir demo",
+
         pricing_title_main: "Planes fáciles de entender",
-        pricing_text_main: "Elige una versión ligera para existir, una versión estándar para presentar bien tu carta o una versión premium para ir más lejos.",
+        pricing_text_main: "Empieza ligero, pasa al estándar para una verdadera presencia digital y añade solo las opciones útiles para tu restaurante.",
+
         plan_light_badge: "Entrada de gama",
         plan_light_title: "Versión Light",
-        plan_light_desc: "Una versión ultra ligera para una presencia simple e inmediata.",
+        plan_light_desc: "Una versión ultra ligera para una presencia simple, rápida e inmediata.",
         plan_light_period: "gratis",
         plan_light_li_1: "Ubicación del restaurante",
         plan_light_li_2: "Botón de llamada directa",
         plan_light_li_3: "Código QR permanente",
         plan_light_note: "Ideal para empezar con una presencia mínima pero limpia.",
         plan_light_btn: "Pedir información",
+
         plan_standard_badge: "Oferta principal",
         plan_standard_title: "Versión Standard",
-        plan_standard_desc: "El núcleo de la oferta TapCarta para presentar una carta digital moderna.",
+        plan_standard_desc: "La verdadera base de TapCarta para presentar tu carta, facilitar el contacto y ganar visibilidad online.",
         plan_standard_period: "/ mes",
-        plan_standard_li_1: "Menú digital completo",
-        plan_standard_li_2: "Detección automática del idioma",
-        plan_standard_li_3: "Fotos de los platos*",
-        plan_standard_li_4: "4 idiomas incluidos*",
-        plan_standard_li_5: "1 modificación del menú al mes",
-        plan_standard_li_6: "Botones llamada, GPS, reseñas Google, WhatsApp",
-        plan_standard_li_7: "Enlace estándar: tapcarta.com/nomduresto",
+        plan_standard_li_1: "Menú digital accesible por código QR",
+        plan_standard_li_2: "Instalación posible en el teléfono",
+        plan_standard_li_3: "Botón WhatsApp",
+        plan_standard_li_4: "Acceso a reseñas Google y GPS",
+        plan_standard_li_5: "Detección automática del idioma",
+        plan_standard_li_6: "4 idiomas incluidos*",
+        plan_standard_li_7: "1 modificación del menú al mes",
+        plan_standard_li_8: "Referencia del restaurante en TapCarta",
         plan_standard_btn: "Recibir propuesta",
-        plan_premium_badge: "Versión avanzada",
-        plan_premium_title: "Versión Premium",
-        plan_premium_desc: "Para ir más lejos con funciones adicionales y una experiencia más rica.",
-        plan_premium_period: "/ mes",
-        plan_premium_li_1: "Todo el Standard",
-        plan_premium_li_2: "Reservas por WhatsApp",
-        plan_premium_li_3: "Pedidos por WhatsApp",
-        plan_premium_li_4: "Soporte prioritario",
-        plan_premium_li_5: "Dirección premium: nomduresto.tapcarta.com",
-        plan_premium_note: "Puede ampliarse con opciones según la necesidad del restaurante.",
-        plan_premium_btn: "Hablar del proyecto",
+
+        plan_advanced_badge: "Opciones y evoluciones",
+        plan_advanced_title: "Desde 40€ / mes",
+        plan_advanced_desc: "Añade solo lo que realmente necesita tu restaurante, sin pagar por funciones inútiles.",
+        plan_advanced_li_1: "Web simple: +10€ / mes",
+        plan_advanced_li_2: "Pedido y reserva por WhatsApp: +10€ / mes",
+        plan_advanced_li_3: "Fotos de platos*: +10€ / mes",
+        plan_advanced_li_4: "Idioma adicional: +5€ / mes",
+        plan_advanced_li_5: "Dirección personalizada: 50€ / año",
+        plan_advanced_li_6: "Ejemplo: nomduresto.tapcarta.com",
+        plan_advanced_note: "Ejemplo: 30€ + web simple = 40€ / mes. La dirección personalizada sigue siendo una opción aparte.",
+        plan_advanced_btn: "Construir mi oferta",
+
         limits_label: "* Límites previstos para garantizar fluidez:",
         limits_text: "las fotos de platos están limitadas a un máximo de 10 por menú. 4 idiomas están incluidos en el plan estándar, con un máximo total de 6 idiomas, para conservar una navegación clara, legible y rápida en el móvil.",
+
         contact_title: "¿Eres restaurador?",
         contact_text: "TapCarta está diseñado para ser fácil de implementar, agradable de presentar a tus clientes y lo bastante claro para venderse con facilidad. Si quieres una versión seria, rápida y moderna de tu carta, este es el buen punto de partida.",
         contact_btn_demo: "Ver la demo",
-        contact_btn_mail: "Solicitar propuesta",
-        contact_btn_whatsapp: "WhatsApp",
-        contact_box_1_label: "Versión estándar",
-        contact_box_1_text: "Una verdadera carta digital, multilingüe y lista para usarse mediante código QR.",
-        contact_box_2_label: "Versión premium",
-        contact_box_2_text: "Reservas, pedidos para llevar y posibilidades más avanzadas según el proyecto.",
-        contact_box_3_label: "Dirección personalizada",
-        contact_box_3_text: "Opción posible con una dirección premium del tipo nomduresto.tapcarta.com.",
+        contact_btn_whatsapp: "Contactar TapCarta por WhatsApp",
+        contact_btn_mail: "Enviar un email",
+        contact_box_1_label: "Respuesta rápida",
+        contact_box_1_text: "¿Una pregunta? Te respondemos rápidamente por WhatsApp.",
+        contact_box_2_label: "Condiciones útiles",
+        contact_box_2_text: "1 modificación al mes incluida. Modificación adicional: 20 €. Plazo máximo: 72 horas laborables.",
+        contact_box_3_label: "Instalación y opciones",
+        contact_box_3_text: "Gastos de instalación: 50 € sin IVA, ofrecidos con compromiso mínimo de 12 meses. Dirección posible: nomduresto.tapcarta.com.",
+
         footer_powered: "Powered by",
+        footer_brand: "TapCarta by FJ",
         footer_link_1: "Funcionamiento",
         footer_link_2: "Demo",
         footer_link_3: "Planes",
         footer_link_4: "Contacto"
       },
+
       en: {
         brand_sub: "QR menu for restaurants",
         nav_features: "How it works",
         nav_demo: "Demo",
         nav_pricing: "Plans",
         nav_contact: "Contact",
+
         hero_badge: "A mobile-first digital solution",
         hero_title: "The smart QR menu for restaurants",
-        hero_text: "TapCarta turns your menu into a fast, elegant and multilingual mobile experience. Customers scan, browse, call, get directions, leave a Google review and can order or book directly through the restaurant’s WhatsApp.",
+        hero_text: "TapCarta turns your menu into a fast, elegant and multilingual mobile experience. Customers scan, browse, get directions, leave a Google review and can order or book directly through the restaurant’s WhatsApp.",
         hero_cta_demo: "View demo",
         hero_cta_pricing: "Discover plans",
         hero_cta_contact: "I am a restaurant owner",
         hero_point_1: "Permanent QR code",
         hero_point_2: "Automatic multilingual mode",
         hero_point_3: "Fast loading",
-        hero_point_4: "Call + GPS + WhatsApp",
-        hero_point_5: "Direct Google review",
+        hero_point_4: "WhatsApp + GPS + Google reviews",
+        hero_point_5: "TapCarta visibility from €30",
+
         mockup_badge: "TapCarta example",
         mockup_title: "La Bonne Fourchette",
         mockup_sub: "Multilingual digital menu",
-        mockup_call: "Call",
-        mockup_route: "Directions",
         mockup_whatsapp: "WhatsApp",
+        mockup_route: "Directions",
         mockup_review: "Google review",
+        mockup_booking: "Book",
         mockup_cat_1: "Starters",
         mockup_desc_1: "Crispy Belgian recipe",
         mockup_desc_2: "Parmesan, arugula, olive oil",
@@ -1386,6 +1440,7 @@
         mockup_desc_4: "House classic",
         mockup_cat_3: "Desserts",
         mockup_desc_5: "Simple and effective",
+
         features_title: "A clear, fast and useful solution",
         features_text: "TapCarta is built for restaurants that want a clean, modern mobile presence that customers understand instantly.",
         feature_1_title: "The customer scans",
@@ -1393,87 +1448,100 @@
         feature_2_title: "The menu adapts",
         feature_2_text: "Language adapts automatically and reading stays clear for quick browsing at the table.",
         feature_3_title: "The customer acts",
-        feature_3_text: "Direct call, WhatsApp, Google reviews, ordering, booking or GPS: every useful action is one tap away.",
+        feature_3_text: "WhatsApp, Google reviews, ordering, booking or GPS: every useful action is one tap away.",
+
         demo_title: "See the full demonstration",
         demo_text: "Open a full TapCarta menu example and discover the experience exactly as a customer sees it on a phone.",
         demo_btn: "Open demo",
+
         pricing_title_main: "Simple plans, easy to understand",
-        pricing_text_main: "Choose a light version to exist, a standard version to present your menu properly, or a premium version to go further.",
+        pricing_text_main: "Start light, move to standard for a real digital presence, then add only the options your restaurant actually needs.",
+
         plan_light_badge: "Entry level",
         plan_light_title: "Light version",
-        plan_light_desc: "An ultra-light version for a simple and immediate presence.",
+        plan_light_desc: "An ultra-light version for a simple, fast and immediate presence.",
         plan_light_period: "free",
         plan_light_li_1: "Restaurant location",
         plan_light_li_2: "Direct call button",
         plan_light_li_3: "Permanent QR code",
         plan_light_note: "Ideal to start with a minimal but clean presence.",
         plan_light_btn: "Request information",
+
         plan_standard_badge: "Main offer",
         plan_standard_title: "Standard version",
-        plan_standard_desc: "The core TapCarta offer to present a real modern digital menu.",
+        plan_standard_desc: "The real TapCarta base to present your menu, make contact easier and gain online visibility.",
         plan_standard_period: "/ month",
-        plan_standard_li_1: "Full digital menu",
-        plan_standard_li_2: "Automatic language detection",
-        plan_standard_li_3: "Dish photos*",
-        plan_standard_li_4: "4 languages included*",
-        plan_standard_li_5: "1 menu update per month",
-        plan_standard_li_6: "Call, GPS, Google reviews, WhatsApp buttons",
-        plan_standard_li_7: "Standard link: tapcarta.com/nomduresto",
+        plan_standard_li_1: "Digital menu accessible via QR code",
+        plan_standard_li_2: "Can be installed on the phone",
+        plan_standard_li_3: "WhatsApp button",
+        plan_standard_li_4: "Google reviews and GPS access",
+        plan_standard_li_5: "Automatic language detection",
+        plan_standard_li_6: "4 languages included*",
+        plan_standard_li_7: "1 menu update per month",
+        plan_standard_li_8: "Restaurant listing on TapCarta",
         plan_standard_btn: "Get a proposal",
-        plan_premium_badge: "Advanced version",
-        plan_premium_title: "Premium version",
-        plan_premium_desc: "To go further with extra features and a richer experience.",
-        plan_premium_period: "/ month",
-        plan_premium_li_1: "Everything in Standard",
-        plan_premium_li_2: "Bookings via WhatsApp",
-        plan_premium_li_3: "Orders via WhatsApp",
-        plan_premium_li_4: "Priority support",
-        plan_premium_li_5: "Premium address: nomduresto.tapcarta.com",
-        plan_premium_note: "Can be expanded with options depending on the restaurant’s needs.",
-        plan_premium_btn: "Discuss the project",
+
+        plan_advanced_badge: "Options & upgrades",
+        plan_advanced_title: "From €40 / month",
+        plan_advanced_desc: "Add only what your restaurant really needs, without paying for useless features.",
+        plan_advanced_li_1: "Simple website: +€10 / month",
+        plan_advanced_li_2: "Ordering and booking via WhatsApp: +€10 / month",
+        plan_advanced_li_3: "Dish photos*: +€10 / month",
+        plan_advanced_li_4: "Additional language: +€5 / month",
+        plan_advanced_li_5: "Custom address: €50 / year",
+        plan_advanced_li_6: "Example: nomduresto.tapcarta.com",
+        plan_advanced_note: "Example: €30 + simple website = €40 / month. The custom address remains a separate option.",
+        plan_advanced_btn: "Build my offer",
+
         limits_label: "* Limits designed to keep the experience smooth:",
         limits_text: "dish photos are limited to a maximum of 10 per menu. 4 languages are included in the standard plan, with a total maximum of 6 languages, in order to keep navigation clear, readable and fast on mobile.",
+
         contact_title: "Are you a restaurant owner?",
         contact_text: "TapCarta is designed to be easy to set up, pleasant to present to your customers and clear enough to sell easily. If you want a serious, fast and modern version of your menu, this is the right starting point.",
         contact_btn_demo: "View demo",
-        contact_btn_mail: "Request a proposal",
-        contact_btn_whatsapp: "WhatsApp",
-        contact_box_1_label: "Standard version",
-        contact_box_1_text: "A real digital menu, multilingual and ready to be used through a QR code.",
-        contact_box_2_label: "Premium version",
-        contact_box_2_text: "Bookings, takeaway orders and more advanced possibilities depending on the project.",
-        contact_box_3_label: "Custom address",
-        contact_box_3_text: "Possible option with a premium address such as nomduresto.tapcarta.com.",
+        contact_btn_whatsapp: "Contact TapCarta on WhatsApp",
+        contact_btn_mail: "Send an email",
+        contact_box_1_label: "Fast reply",
+        contact_box_1_text: "A question? We reply quickly on WhatsApp.",
+        contact_box_2_label: "Useful conditions",
+        contact_box_2_text: "1 update per month included. Additional update: €20. Maximum delay: 72 working hours.",
+        contact_box_3_label: "Setup & options",
+        contact_box_3_text: "Setup fee: €50 excl. VAT, waived with a minimum 12-month commitment. Possible address: nomduresto.tapcarta.com.",
+
         footer_powered: "Powered by",
+        footer_brand: "TapCarta by FJ",
         footer_link_1: "How it works",
         footer_link_2: "Demo",
         footer_link_3: "Plans",
         footer_link_4: "Contact"
       },
+
       nl: {
         brand_sub: "QR-menu voor restaurants",
         nav_features: "Werking",
         nav_demo: "Demo",
         nav_pricing: "Pakketten",
         nav_contact: "Contact",
+
         hero_badge: "Digitale oplossing voor mobiel gebruik",
         hero_title: "Het slimme QR-menu voor restaurants",
-        hero_text: "TapCarta maakt van uw kaart een snelle, elegante en meertalige mobiele ervaring. Klanten scannen, bekijken, bellen, vinden de route, laten een Google-review achter en kunnen rechtstreeks bestellen of reserveren via de WhatsApp van het restaurant.",
+        hero_text: "TapCarta maakt van uw kaart een snelle, elegante en meertalige mobiele ervaring. Klanten scannen, bekijken, vinden de route, laten een Google-review achter en kunnen rechtstreeks bestellen of reserveren via de WhatsApp van het restaurant.",
         hero_cta_demo: "Bekijk demo",
         hero_cta_pricing: "Ontdek pakketten",
         hero_cta_contact: "Ik ben restauranthouder",
         hero_point_1: "Permanente QR-code",
         hero_point_2: "Automatische meertaligheid",
         hero_point_3: "Snelle laadtijd",
-        hero_point_4: "Bellen + GPS + WhatsApp",
-        hero_point_5: "Directe Google-review",
+        hero_point_4: "WhatsApp + GPS + Google reviews",
+        hero_point_5: "TapCarta-zichtbaarheid vanaf €30",
+
         mockup_badge: "TapCarta voorbeeld",
         mockup_title: "La Bonne Fourchette",
         mockup_sub: "Meertalig digitaal menu",
-        mockup_call: "Bellen",
-        mockup_route: "Route",
         mockup_whatsapp: "WhatsApp",
+        mockup_route: "Route",
         mockup_review: "Google-review",
+        mockup_booking: "Reserveren",
         mockup_cat_1: "Voorgerechten",
         mockup_desc_1: "Krokant Belgisch recept",
         mockup_desc_2: "Parmezaan, rucola, olijfolie",
@@ -1482,6 +1550,7 @@
         mockup_desc_4: "Huisklassieker",
         mockup_cat_3: "Desserts",
         mockup_desc_5: "Eenvoudig en doeltreffend",
+
         features_title: "Een duidelijke, snelle en nuttige oplossing",
         features_text: "TapCarta is gemaakt voor restaurants die een nette, moderne mobiele aanwezigheid willen die klanten meteen begrijpen.",
         feature_1_title: "De klant scant",
@@ -1489,58 +1558,68 @@
         feature_2_title: "Het menu past zich aan",
         feature_2_text: "De taal past zich automatisch aan en het menu blijft duidelijk leesbaar voor snelle consultatie aan tafel.",
         feature_3_title: "De klant onderneemt actie",
-        feature_3_text: "Direct bellen, WhatsApp, Google reviews, bestellen, reserveren of GPS: elke nuttige actie is bereikbaar met één tik.",
+        feature_3_text: "WhatsApp, Google reviews, bestellen, reserveren of GPS: elke nuttige actie is bereikbaar met één tik.",
+
         demo_title: "Bekijk de volledige demonstratie",
         demo_text: "Open een volledig TapCarta-voorbeeldmenu en ontdek de ervaring precies zoals een klant die op zijn telefoon ziet.",
         demo_btn: "Open demo",
+
         pricing_title_main: "Eenvoudige pakketten, makkelijk te begrijpen",
-        pricing_text_main: "Kies een lichte versie om aanwezig te zijn, een standaard versie om uw kaart goed te presenteren of een premium versie om verder te gaan.",
+        pricing_text_main: "Begin licht, stap over naar standaard voor een echte digitale aanwezigheid en voeg daarna alleen de opties toe die uw restaurant echt nodig heeft.",
+
         plan_light_badge: "Instapniveau",
         plan_light_title: "Light versie",
-        plan_light_desc: "Een ultra-lichte versie voor een eenvoudige en onmiddellijke aanwezigheid.",
+        plan_light_desc: "Een ultra-lichte versie voor een eenvoudige, snelle en onmiddellijke aanwezigheid.",
         plan_light_period: "gratis",
         plan_light_li_1: "Locatie van het restaurant",
         plan_light_li_2: "Directe belknop",
         plan_light_li_3: "Permanente QR-code",
         plan_light_note: "Ideaal om te starten met een minimale maar nette aanwezigheid.",
         plan_light_btn: "Informatie aanvragen",
+
         plan_standard_badge: "Hoofdaanbod",
         plan_standard_title: "Standaard versie",
-        plan_standard_desc: "De kern van het TapCarta-aanbod om een echt modern digitaal menu te presenteren.",
+        plan_standard_desc: "De echte TapCarta-basis om uw menu te presenteren, contact te vergemakkelijken en online zichtbaarheid te winnen.",
         plan_standard_period: "/ maand",
-        plan_standard_li_1: "Volledig digitaal menu",
-        plan_standard_li_2: "Automatische taaldetectie",
-        plan_standard_li_3: "Foto’s van gerechten*",
-        plan_standard_li_4: "4 talen inbegrepen*",
-        plan_standard_li_5: "1 menuwijziging per maand",
-        plan_standard_li_6: "Knoppen voor bellen, GPS, Google reviews en WhatsApp",
-        plan_standard_li_7: "Standaardlink: tapcarta.com/nomduresto",
+        plan_standard_li_1: "Digitaal menu toegankelijk via QR-code",
+        plan_standard_li_2: "Installatie mogelijk op de telefoon",
+        plan_standard_li_3: "WhatsApp-knop",
+        plan_standard_li_4: "Toegang tot Google reviews en GPS",
+        plan_standard_li_5: "Automatische taaldetectie",
+        plan_standard_li_6: "4 talen inbegrepen*",
+        plan_standard_li_7: "1 menuwijziging per maand",
+        plan_standard_li_8: "Vermelding van het restaurant op TapCarta",
         plan_standard_btn: "Ontvang een voorstel",
-        plan_premium_badge: "Geavanceerde versie",
-        plan_premium_title: "Premium versie",
-        plan_premium_desc: "Om verder te gaan met extra functies en een rijkere ervaring.",
-        plan_premium_period: "/ maand",
-        plan_premium_li_1: "Alles van Standard",
-        plan_premium_li_2: "Reservaties via WhatsApp",
-        plan_premium_li_3: "Bestellingen via WhatsApp",
-        plan_premium_li_4: "Prioritaire ondersteuning",
-        plan_premium_li_5: "Premium adres: nomduresto.tapcarta.com",
-        plan_premium_note: "Kan worden uitgebreid met opties volgens de behoefte van het restaurant.",
-        plan_premium_btn: "Bespreek het project",
+
+        plan_advanced_badge: "Opties en uitbreidingen",
+        plan_advanced_title: "Vanaf €40 / maand",
+        plan_advanced_desc: "Voeg alleen toe wat uw restaurant echt nodig heeft, zonder te betalen voor nutteloze functies.",
+        plan_advanced_li_1: "Eenvoudige website: +€10 / maand",
+        plan_advanced_li_2: "Bestellen en reserveren via WhatsApp: +€10 / maand",
+        plan_advanced_li_3: "Foto’s van gerechten*: +€10 / maand",
+        plan_advanced_li_4: "Extra taal: +€5 / maand",
+        plan_advanced_li_5: "Gepersonaliseerd adres: €50 / jaar",
+        plan_advanced_li_6: "Voorbeeld: nomduresto.tapcarta.com",
+        plan_advanced_note: "Voorbeeld: €30 + eenvoudige website = €40 / maand. Het gepersonaliseerde adres blijft een aparte optie.",
+        plan_advanced_btn: "Mijn aanbod samenstellen",
+
         limits_label: "* Limieten om de ervaring vlot te houden:",
         limits_text: "foto’s van gerechten zijn beperkt tot maximaal 10 per menu. 4 talen zijn inbegrepen in het standaardpakket, met een totaal maximum van 6 talen, om de navigatie duidelijk, leesbaar en snel te houden op mobiel.",
+
         contact_title: "Bent u restauranthouder?",
         contact_text: "TapCarta is ontworpen om eenvoudig te installeren, aangenaam om aan klanten te tonen en duidelijk genoeg om vlot te verkopen. Als u een serieuze, snelle en moderne versie van uw kaart wilt, is dit het juiste vertrekpunt.",
         contact_btn_demo: "Bekijk demo",
-        contact_btn_mail: "Vraag een voorstel aan",
-        contact_btn_whatsapp: "WhatsApp",
-        contact_box_1_label: "Standaard versie",
-        contact_box_1_text: "Een echt digitaal menu, meertalig en klaar voor gebruik via QR-code.",
-        contact_box_2_label: "Premium versie",
-        contact_box_2_text: "Reservaties, afhaalbestellingen en meer geavanceerde mogelijkheden volgens het project.",
-        contact_box_3_label: "Gepersonaliseerd adres",
-        contact_box_3_text: "Mogelijke optie met een premium adres zoals nomduresto.tapcarta.com.",
+        contact_btn_whatsapp: "Contacteer TapCarta via WhatsApp",
+        contact_btn_mail: "Stuur een e-mail",
+        contact_box_1_label: "Snel antwoord",
+        contact_box_1_text: "Een vraag? Wij antwoorden snel via WhatsApp.",
+        contact_box_2_label: "Nuttige voorwaarden",
+        contact_box_2_text: "1 wijziging per maand inbegrepen. Extra wijziging: €20. Maximale termijn: 72 werkuren.",
+        contact_box_3_label: "Installatie en opties",
+        contact_box_3_text: "Installatiekost: €50 excl. btw, gratis bij een minimum engagement van 12 maanden. Mogelijk adres: nomduresto.tapcarta.com.",
+
         footer_powered: "Powered by",
+        footer_brand: "TapCarta by FJ",
         footer_link_1: "Werking",
         footer_link_2: "Demo",
         footer_link_3: "Pakketten",
