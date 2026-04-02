@@ -9,6 +9,21 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+  <link rel="icon" type="image/png" href="https://fjmenu.github.io/tapcarta-site/logo-fj.png">
+  <link rel="apple-touch-icon" href="https://fjmenu.github.io/tapcarta-site/logo-fj.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TapCarta – Menu QR pour restaurants">
+  <meta property="og:description" content="Menu QR multilingue pour restaurants : WhatsApp, GPS, avis Google, options simples et version mobile élégante.">
+  <meta property="og:image" content="https://fjmenu.github.io/tapcarta-site/logo-fj.png">
+  <meta property="og:url" content="https://fjmenu.github.io/tapcarta-site/">
+  <meta property="og:site_name" content="TapCarta">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TapCarta – Menu QR pour restaurants">
+  <meta name="twitter:description" content="Menu QR multilingue pour restaurants : WhatsApp, GPS, avis Google, options simples et version mobile élégante.">
+  <meta name="twitter:image" content="https://fjmenu.github.io/tapcarta-site/logo-fj.png">
+
   <style>
     :root{
       --bg:#0f0f0f;
@@ -626,6 +641,48 @@
       font-weight:900;
     }
 
+    .options-features{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:0;
+    }
+
+    .options-features li{
+      list-style:none;
+    }
+
+    .options-features .option-main{
+      position:relative;
+      padding-left:27px;
+      color:#ececec;
+      line-height:1.55;
+      font-size:15px;
+      margin-bottom:8px;
+    }
+
+    .options-features .option-main::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold);
+      font-weight:900;
+    }
+
+    .options-features .option-detail{
+      padding-left:27px;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14px;
+      margin-bottom:14px;
+    }
+
+    .options-features .option-detail:last-child{
+      margin-bottom:0;
+    }
+
     .pricing-card .btn{
       margin-top:22px;
       width:100%;
@@ -791,6 +848,13 @@
       color:#fff;
       font-size:16px;
       font-weight:800;
+    }
+
+    .site-version{
+      margin-top:6px;
+      color:#9f9f9f;
+      font-size:12px;
+      letter-spacing:.04em;
     }
 
     .fj-logo-wrap{
@@ -1157,7 +1221,7 @@
               <li data-i18n="plan_standard_li_4">Accès avis Google</li>
               <li data-i18n="plan_standard_li_5">Accès GPS vers le restaurant</li>
               <li data-i18n="plan_standard_li_6">Détection automatique de la langue</li>
-              <li data-i18n="plan_standard_li_7">Menu multilingue : 4 langues incluses<span class="asterisk">*</span></li>
+              <li data-i18n="plan_standard_li_7">Menu multilingue : 4 langues incluses*</li>
               <li data-i18n="plan_standard_li_8">1 modification du menu par mois</li>
               <li data-i18n="plan_standard_li_9">Référencement du restaurant sur TapCarta</li>
             </ul>
@@ -1172,15 +1236,21 @@
               Vous ajoutez uniquement les options utiles à votre restaurant. Rien n’est imposé.
             </p>
 
-            <ul class="features">
-              <li data-i18n="plan_options_li_1">Site web simple : +10 € / mois</li>
-              <li data-i18n="plan_options_li_2">Présentation du restaurant, accès au menu, informations et localisation GPS</li>
-              <li data-i18n="plan_options_li_3">Commande et réservation via WhatsApp : +10 € / mois</li>
-              <li data-i18n="plan_options_li_4">Les clients peuvent commander ou réserver directement via WhatsApp</li>
-              <li data-i18n="plan_options_li_5">Photos des plats dans le menu<span class="asterisk">*</span> : +10 € / mois</li>
-              <li data-i18n="plan_options_li_6">Jusqu’à 10 photos intégrées dans le menu digital</li>
-              <li data-i18n="plan_options_li_7">Adresse personnalisée : 50 € / an</li>
-              <li data-i18n="plan_options_li_8">Exemple : www.nomdurestaurant.tapcarta.com</li>
+            <ul class="options-features">
+              <li class="option-main" data-i18n="plan_options_li_1">Site web simple : +10 € / mois</li>
+              <li class="option-detail" data-i18n="plan_options_li_2">Présentation du restaurant, accès au menu, informations et localisation GPS</li>
+
+              <li class="option-main" data-i18n="plan_options_li_3">Commande et réservation via WhatsApp : +10 € / mois</li>
+              <li class="option-detail" data-i18n="plan_options_li_4">Les clients peuvent commander ou réserver directement via WhatsApp</li>
+
+              <li class="option-main" data-i18n="plan_options_li_5">Photos des plats dans le menu* : +10 € / mois</li>
+              <li class="option-detail" data-i18n="plan_options_li_6">Jusqu’à 10 photos intégrées dans le menu digital</li>
+
+              <li class="option-main" data-i18n="plan_options_li_7">Langue supplémentaire : +5 € / mois</li>
+              <li class="option-detail" data-i18n="plan_options_li_8">Au-delà des 4 langues incluses dans la version Standard</li>
+
+              <li class="option-main" data-i18n="plan_options_li_9">Adresse personnalisée : 50 € / an</li>
+              <li class="option-detail" data-i18n="plan_options_li_10">Exemple : www.nomdurestaurant.tapcarta.com</li>
             </ul>
 
             <div class="plan-note" data-i18n="plan_options_note">
@@ -1253,7 +1323,7 @@
             <div class="contact-item">
               <div class="contact-item-label" data-i18n="contact_box_3_label">Options</div>
               <div class="contact-item-value" data-i18n="contact_box_3_text">
-                Site web simple, commande et réservation via WhatsApp, photos des plats et adresse personnalisée selon les besoins réels du restaurant.
+                Site web simple, commande et réservation via WhatsApp, photos des plats, langues supplémentaires et adresse personnalisée selon les besoins réels du restaurant.
               </div>
             </div>
           </div>
@@ -1271,6 +1341,7 @@
         <div class="powered-text">
           <span data-i18n="footer_powered">Powered by</span>
           <strong data-i18n="footer_brand">TapCarta by FJ</strong>
+          <span class="site-version" data-i18n="site_version">Version du site : V1.1.6</span>
         </div>
       </div>
 
@@ -1372,8 +1443,10 @@
         plan_options_li_4: "Les clients peuvent commander ou réserver directement via WhatsApp",
         plan_options_li_5: "Photos des plats dans le menu* : +10 € / mois",
         plan_options_li_6: "Jusqu’à 10 photos intégrées dans le menu digital",
-        plan_options_li_7: "Adresse personnalisée : 50 € / an",
-        plan_options_li_8: "Exemple : www.nomdurestaurant.tapcarta.com",
+        plan_options_li_7: "Langue supplémentaire : +5 € / mois",
+        plan_options_li_8: "Au-delà des 4 langues incluses dans la version Standard",
+        plan_options_li_9: "Adresse personnalisée : 50 € / an",
+        plan_options_li_10: "Exemple : www.nomdurestaurant.tapcarta.com",
         plan_options_note: "Les options viennent s’ajouter à la version Standard à 30 € / mois.",
         plan_options_btn: "Composer mon offre",
 
@@ -1399,14 +1472,15 @@
         contact_box_2_label: "Version Standard",
         contact_box_2_text: "Menu QR, WhatsApp, avis Google, GPS, 4 langues incluses et référencement TapCarta dès 30 € / mois.",
         contact_box_3_label: "Options",
-        contact_box_3_text: "Site web simple, commande et réservation via WhatsApp, photos des plats et adresse personnalisée selon les besoins réels du restaurant.",
+        contact_box_3_text: "Site web simple, commande et réservation via WhatsApp, photos des plats, langues supplémentaires et adresse personnalisée selon les besoins réels du restaurant.",
 
         footer_powered: "Powered by",
         footer_brand: "TapCarta by FJ",
         footer_link_1: "Fonctionnement",
         footer_link_2: "Démo",
         footer_link_3: "Offres",
-        footer_link_4: "Contact"
+        footer_link_4: "Contact",
+        site_version: "Version du site : V1.1.6"
       },
 
       es: {
@@ -1496,8 +1570,10 @@
         plan_options_li_4: "Los clientes pueden pedir o reservar directamente por WhatsApp",
         plan_options_li_5: "Fotos de platos en el menú* : +10 € / mes",
         plan_options_li_6: "Hasta 10 fotos integradas en el menú digital",
-        plan_options_li_7: "Dirección personalizada: 50 € / año",
-        plan_options_li_8: "Ejemplo: www.nomdurestaurant.tapcarta.com",
+        plan_options_li_7: "Idioma adicional: +5 € / mes",
+        plan_options_li_8: "Más allá de los 4 idiomas incluidos en la versión Standard",
+        plan_options_li_9: "Dirección personalizada: 50 € / año",
+        plan_options_li_10: "Ejemplo: www.nomdurestaurant.tapcarta.com",
         plan_options_note: "Las opciones se añaden a la versión Standard de 30 € / mes.",
         plan_options_btn: "Componer mi oferta",
 
@@ -1523,14 +1599,15 @@
         contact_box_2_label: "Versión Standard",
         contact_box_2_text: "Menú QR, WhatsApp, reseñas Google, GPS, 4 idiomas incluidos y visibilidad TapCarta desde 30 € / mes.",
         contact_box_3_label: "Opciones",
-        contact_box_3_text: "Web simple, pedido y reserva por WhatsApp, fotos de platos y dirección personalizada según las necesidades reales del restaurante.",
+        contact_box_3_text: "Web simple, pedido y reserva por WhatsApp, fotos de platos, idiomas adicionales y dirección personalizada según las necesidades reales del restaurante.",
 
         footer_powered: "Powered by",
         footer_brand: "TapCarta by FJ",
         footer_link_1: "Funcionamiento",
         footer_link_2: "Demo",
         footer_link_3: "Planes",
-        footer_link_4: "Contacto"
+        footer_link_4: "Contacto",
+        site_version: "Versión del sitio: V1.1.6"
       },
 
       en: {
@@ -1620,8 +1697,10 @@
         plan_options_li_4: "Customers can order or book directly through WhatsApp",
         plan_options_li_5: "Dish photos in the menu* : +€10 / month",
         plan_options_li_6: "Up to 10 photos integrated into the digital menu",
-        plan_options_li_7: "Custom address: €50 / year",
-        plan_options_li_8: "Example: www.nomdurestaurant.tapcarta.com",
+        plan_options_li_7: "Additional language: +€5 / month",
+        plan_options_li_8: "Beyond the 4 languages included in the Standard version",
+        plan_options_li_9: "Custom address: €50 / year",
+        plan_options_li_10: "Example: www.nomdurestaurant.tapcarta.com",
         plan_options_note: "Options are added to the Standard version at €30 / month.",
         plan_options_btn: "Build my offer",
 
@@ -1647,14 +1726,15 @@
         contact_box_2_label: "Standard version",
         contact_box_2_text: "QR menu, WhatsApp, Google reviews, GPS, 4 languages included and TapCarta visibility from €30 / month.",
         contact_box_3_label: "Options",
-        contact_box_3_text: "Simple website, ordering and booking via WhatsApp, dish photos and custom address depending on the restaurant’s real needs.",
+        contact_box_3_text: "Simple website, ordering and booking via WhatsApp, dish photos, additional languages and custom address depending on the restaurant’s real needs.",
 
         footer_powered: "Powered by",
         footer_brand: "TapCarta by FJ",
         footer_link_1: "How it works",
         footer_link_2: "Demo",
         footer_link_3: "Plans",
-        footer_link_4: "Contact"
+        footer_link_4: "Contact",
+        site_version: "Site version: V1.1.6"
       },
 
       nl: {
@@ -1744,8 +1824,10 @@
         plan_options_li_4: "Klanten kunnen rechtstreeks bestellen of reserveren via WhatsApp",
         plan_options_li_5: "Foto’s van gerechten in het menu* : +€10 / maand",
         plan_options_li_6: "Tot 10 foto’s geïntegreerd in het digitale menu",
-        plan_options_li_7: "Gepersonaliseerd adres: €50 / jaar",
-        plan_options_li_8: "Voorbeeld: www.nomdurestaurant.tapcarta.com",
+        plan_options_li_7: "Extra taal: +€5 / maand",
+        plan_options_li_8: "Bovenop de 4 talen die in de Standard-versie inbegrepen zijn",
+        plan_options_li_9: "Gepersonaliseerd adres: €50 / jaar",
+        plan_options_li_10: "Voorbeeld: www.nomdurestaurant.tapcarta.com",
         plan_options_note: "De opties worden toegevoegd aan de Standard-versie van €30 / maand.",
         plan_options_btn: "Mijn aanbod samenstellen",
 
@@ -1771,14 +1853,15 @@
         contact_box_2_label: "Standard versie",
         contact_box_2_text: "QR-menu, WhatsApp, Google reviews, GPS, 4 talen inbegrepen en TapCarta-zichtbaarheid vanaf €30 / maand.",
         contact_box_3_label: "Opties",
-        contact_box_3_text: "Eenvoudige website, bestellen en reserveren via WhatsApp, foto’s van gerechten en gepersonaliseerd adres volgens de werkelijke behoeften van het restaurant.",
+        contact_box_3_text: "Eenvoudige website, bestellen en reserveren via WhatsApp, foto’s van gerechten, extra talen en gepersonaliseerd adres volgens de werkelijke behoeften van het restaurant.",
 
         footer_powered: "Powered by",
         footer_brand: "TapCarta by FJ",
         footer_link_1: "Werking",
         footer_link_2: "Demo",
         footer_link_3: "Pakketten",
-        footer_link_4: "Contact"
+        footer_link_4: "Contact",
+        site_version: "Siteversie: V1.1.6"
       }
     };
 
