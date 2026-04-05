@@ -9,20 +9,20 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <link rel="icon" type="image/png" href="https://fjmenu.github.io/tapcarta-site/logo-fj.png">
-  <link rel="apple-touch-icon" href="https://fjmenu.github.io/tapcarta-site/logo-fj.png">
+  <link id="site-favicon" rel="icon" type="image/png" href="">
+<link id="site-apple-icon" rel="apple-touch-icon" href="">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="TapCarta – Menu QR pour restaurants">
-  <meta property="og:description" content="Menu QR multilingue pour restaurants : WhatsApp, GPS, avis Google, options simples et version mobile élégante.">
-  <meta property="og:image" content="https://fjmenu.github.io/tapcarta-site/logo-fj.png">
-  <meta property="og:url" content="https://fjmenu.github.io/tapcarta-site/">
-  <meta property="og:site_name" content="TapCarta">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TapCarta – Menu QR pour restaurants">
+<meta property="og:description" content="Menu QR multilingue pour restaurants : WhatsApp, GPS, avis Google, options simples et version mobile élégante.">
+<meta id="meta-og-image" property="og:image" content="">
+<meta id="meta-og-url" property="og:url" content="">
+<meta property="og:site_name" content="TapCarta">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TapCarta – Menu QR pour restaurants">
-  <meta name="twitter:description" content="Menu QR multilingue pour restaurants : WhatsApp, GPS, avis Google, options simples et version mobile élégante.">
-  <meta name="twitter:image" content="https://fjmenu.github.io/tapcarta-site/logo-fj.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TapCarta – Menu QR pour restaurants">
+<meta name="twitter:description" content="Menu QR multilingue pour restaurants : WhatsApp, GPS, avis Google, options simples et version mobile élégante.">
+<meta id="meta-twitter-image" name="twitter:image" content="">
 
   <style>
     :root{
@@ -1025,7 +1025,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://fjmenu.github.io/tapcarta-standard/" target="_blank" rel="noopener" data-i18n="hero_cta_demo">Voir la démo</a>
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener" data-link="standard-demo" data-i18n="hero_cta_demo">Voir la démo</a>
             <a class="btn btn-secondary" href="#pricing" data-i18n="hero_cta_pricing">Découvrir les offres</a>
             <a class="btn btn-secondary" href="#contact" data-i18n="hero_cta_contact">Je suis restaurateur</a>
           </div>
@@ -1155,7 +1155,7 @@
             </p>
           </div>
 
-          <a class="btn btn-primary" href="https://fjmenu.github.io/demo-menu/" target="_blank" rel="noopener" data-i18n="demo_btn">Ouvrir la démo</a>
+       <a class="btn btn-primary" href="#" target="_blank" rel="noopener" data-link="demo-menu" data-i18n="demo_btn">Ouvrir la démo</a> 
         </div>
 
         <div class="notice-card">
@@ -1298,11 +1298,11 @@
               TapCarta est conçu pour être simple à mettre en place, professionnel à présenter et facile à comprendre pour vos clients. Vous partez sur une base claire à 30 € / mois, puis vous ajoutez uniquement les options réellement utiles à votre restaurant.
             </p>
 
-            <div class="contact-actions">
-              <a class="btn btn-primary" href="https://fjmenu.github.io/demo-menu/" target="_blank" rel="noopener" data-i18n="contact_btn_demo">Voir la démo</a>
-              <a class="btn btn-whatsapp" href="https://wa.me/34672486699?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20TapCarta." target="_blank" rel="noopener" data-i18n="contact_btn_whatsapp">Contacter TapCarta sur WhatsApp</a>
-              <a class="btn btn-secondary" href="mailto:fj.es@outlook.be" data-i18n="contact_btn_mail">Envoyer un email</a>
-            </div>
+ <div class="contact-actions">
+  <a class="btn btn-primary" href="#" target="_blank" rel="noopener" data-link="demo-menu" data-i18n="contact_btn_demo">Voir la démo</a>
+  <a class="btn btn-whatsapp" href="#" target="_blank" rel="noopener" data-link="whatsapp" data-i18n="contact_btn_whatsapp">Contacter TapCarta sur WhatsApp</a>
+  <a class="btn btn-secondary" href="#" data-link="email" data-i18n="contact_btn_mail">Envoyer un email</a>
+</div>
           </div>
 
           <div class="contact-list">
@@ -1336,12 +1336,12 @@
     <div class="container footer-inner">
       <div class="powered">
         <span class="fj-logo-wrap" aria-label="FJ">
-          <img src="https://fjmenu.github.io/tapcarta-site/logo-fj.png" alt="TapCarta by FJ" class="fj-logo">
+        <img id="footer-logo" src="" alt="TapCarta by FJ" class="fj-logo">
         </span>
         <div class="powered-text">
           <span data-i18n="footer_powered">Powered by</span>
           <strong data-i18n="footer_brand">TapCarta by FJ</strong>
-          <span class="site-version" data-i18n="site_version">Version du site : V1.2.1</span>
+     <span class="site-version" id="site-version"></span>
         </div>
       </div>
 
@@ -1354,8 +1354,21 @@
     </div>
   </footer>
 
-  <script>
-  const translations = {
+ <script>
+const SITE_VERSION = "V1.2.2";
+
+const CONFIG = {
+  SITE_VERSION,
+  SITE_URL: "https://fjmenu.github.io/tapcarta-site/",
+  LOGO_URL: "https://fjmenu.github.io/tapcarta-site/logo-fj.png",
+  DEMO_MENU_URL: "https://fjmenu.github.io/demo-menu/",
+  STANDARD_DEMO_URL: "https://fjmenu.github.io/tapcarta-standard/",
+  WHATSAPP_NUMBER: "34672486699",
+  CONTACT_EMAIL: "fj.es@outlook.be",
+  WHATSAPP_TEXT: "Bonjour, je souhaite des informations sur TapCarta."
+};
+
+const translations = {
     fr: {
       brand_sub: "Menu QR pour restaurants",
       nav_features: "Fonctionnement",
@@ -1480,7 +1493,7 @@
       footer_link_2: "Démo",
       footer_link_3: "Offres",
       footer_link_4: "Contact",
-      site_version: "Version du site : V1.2.1"
+    site_version_label: "Version du site"
     },
 
     es: {
@@ -1607,7 +1620,7 @@
       footer_link_2: "Demo",
       footer_link_3: "Planes",
       footer_link_4: "Contacto",
-      site_version: "Versión del sitio: V1.2.1"
+    site_version_label: "Versión del sitio"
     },
 
     en: {
@@ -1734,7 +1747,7 @@
       footer_link_2: "Demo",
       footer_link_3: "Plans",
       footer_link_4: "Contact",
-      site_version: "Site version: V1.2.1"
+  site_version_label: "Site version"
     },
 
     nl: {
@@ -1861,7 +1874,7 @@
       footer_link_2: "Demo",
       footer_link_3: "Pakketten",
       footer_link_4: "Contact",
-      site_version: "Siteversie: V1.2.1"
+  site_version_label: "Siteversie"
     }
   };
 
@@ -1887,34 +1900,60 @@
     return "fr";
   }
 
-  function applyLanguage(lang){
-    const dict = translations[lang] || translations.fr;
-    document.documentElement.lang = lang;
+  function initStaticAssets(){
+  const favicon = document.getElementById("site-favicon");
+  const appleIcon = document.getElementById("site-apple-icon");
+  const ogImage = document.getElementById("meta-og-image");
+  const ogUrl = document.getElementById("meta-og-url");
+  const twitterImage = document.getElementById("meta-twitter-image");
+  const footerLogo = document.getElementById("footer-logo");
 
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if(dict[key]){
-        el.textContent = dict[key];
-      }
-    });
+  if(favicon) favicon.href = CONFIG.LOGO_URL;
+  if(appleIcon) appleIcon.href = CONFIG.LOGO_URL;
+  if(ogImage) ogImage.content = CONFIG.LOGO_URL;
+  if(ogUrl) ogUrl.content = CONFIG.SITE_URL;
+  if(twitterImage) twitterImage.content = CONFIG.LOGO_URL;
+  if(footerLogo) footerLogo.src = CONFIG.LOGO_URL;
+}
 
-    document.querySelectorAll(".lang-btn").forEach(btn => {
-      btn.classList.toggle("active", btn.dataset.lang === lang);
-    });
-
-    localStorage.setItem("tapcarta_lang", lang);
+function updateSiteVersion(lang){
+  const dict = translations[lang] || translations.fr;
+  const versionEl = document.getElementById("site-version");
+  if(versionEl){
+    versionEl.textContent = `${dict.site_version_label} : ${CONFIG.SITE_VERSION}`;
   }
+}
 
-  function forceTopOnLoad(){
-    if(window.location.hash && window.location.hash !== "#top"){
-      history.replaceState(null, "", window.location.pathname + window.location.search);
+function applyLanguage(lang){
+  const dict = translations[lang] || translations.fr;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if(dict[key]){
+      el.textContent = dict[key];
     }
-    window.scrollTo(0, 0);
+  });
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+
+  localStorage.setItem("tapcarta_lang", lang);
+  updateDynamicLinks(lang);
+  updateSiteVersion(lang);
+}
+
+ function forceTopOnLoad(){
+  if(window.location.hash && window.location.hash !== "#top"){
+    history.replaceState(null, "", window.location.pathname + window.location.search);
   }
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+}
 
-  window.addEventListener("load", forceTopOnLoad);
-  window.addEventListener("pageshow", forceTopOnLoad);
+window.addEventListener("load", forceTopOnLoad);
 
+initStaticAssets();
   const initialLang = detectLanguage();
   applyLanguage(initialLang);
 
@@ -1923,6 +1962,33 @@
       applyLanguage(btn.dataset.lang);
     });
   });
+  function withLang(url, lang){
+  try{
+    const u = new URL(url);
+    u.searchParams.set("lang", lang);
+    return u.toString();
+  }catch{
+    return url;
+  }
+}
+
+function updateDynamicLinks(lang){
+  document.querySelectorAll('[data-link="standard-demo"]').forEach(el => {
+    el.href = withLang(CONFIG.STANDARD_DEMO_URL, lang);
+  });
+
+  document.querySelectorAll('[data-link="demo-menu"]').forEach(el => {
+    el.href = withLang(CONFIG.DEMO_MENU_URL, lang);
+  });
+
+  document.querySelectorAll('[data-link="whatsapp"]').forEach(el => {
+    el.href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIG.WHATSAPP_TEXT)}`;
+  });
+
+  document.querySelectorAll('[data-link="email"]').forEach(el => {
+    el.href = `mailto:${CONFIG.CONTACT_EMAIL}`;
+  });
+}
 </script>
 </body>
 </html>
